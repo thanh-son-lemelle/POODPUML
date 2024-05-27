@@ -75,13 +75,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 62,
+				"line" : 68,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 45,
+				"line" : 51,
 				"parent" : 0
 			},
 			{
@@ -322,7 +322,7 @@
 			[
 				{
 					"backtrace" : 0,
-					"path" : "C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/POODPUML_autogen/include"
+					"path" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/POODPUML_autogen/include"
 				},
 				{
 					"backtrace" : 14,
@@ -364,18 +364,21 @@
 			[
 				0,
 				1,
-				2
+				2,
+				6,
+				9,
+				11
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"id" : "POODPUML_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "POODPUML_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "POODPUML_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "POODPUML::@6890427a1f51a3e7e1df",
@@ -487,7 +490,10 @@
 			[
 				0,
 				1,
-				2
+				2,
+				6,
+				9,
+				11
 			]
 		},
 		{
@@ -495,7 +501,11 @@
 			"sourceIndexes" : 
 			[
 				3,
-				5
+				5,
+				7,
+				8,
+				10,
+				12
 			]
 		},
 		{
@@ -503,14 +513,14 @@
 			"sourceIndexes" : 
 			[
 				4,
-				6
+				13
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				7
+				14
 			]
 		}
 	],
@@ -544,6 +554,44 @@
 			"backtrace" : 4,
 			"path" : "mainwindow.ui",
 			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "turret.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "turret.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "appstate.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "menustate.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "menustate.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "gamestate.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "gamestate.cpp",
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,

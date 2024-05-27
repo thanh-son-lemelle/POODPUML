@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-525fa05cf656046d6f41.json",
+					"jsonFile" : "directory-.-Debug-46fd55ca100c8f9d0088.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "POODPUML::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-POODPUML-Debug-83b8b872126ad06a20d0.json",
+					"jsonFile" : "target-POODPUML-Debug-3703009a15ba97410f1e.json",
 					"name" : "POODPUML",
 					"projectIndex" : 0
 				},
@@ -68,8 +68,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug",
-		"source" : "C:/Users/tslem/Documents/POODPUML"
+		"build" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug",
+		"source" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML"
 	},
 	"version" : 
 	{
