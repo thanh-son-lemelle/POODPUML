@@ -1,0 +1,9 @@
+# ninja log v5
+1	892	7385216133201678	POODPUML_autogen/timestamp	b7672187d5b21571
+936	2944	7385216154624360	CMakeFiles/POODPUML.dir/mainwindow.cpp.obj	8b4b41ef9908f689
+1	892	7385216133201678	POODPUML_autogen/mocs_compilation.cpp	b7672187d5b21571
+1	892	7385216133201678	C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/POODPUML_autogen/timestamp	b7672187d5b21571
+1	892	7385216133201678	C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/POODPUML_autogen/mocs_compilation.cpp	b7672187d5b21571
+912	2871	7385216153879940	CMakeFiles/POODPUML.dir/POODPUML_autogen/mocs_compilation.cpp.obj	f50d5f7f4db39ce5
+893	2893	7385216154086195	CMakeFiles/POODPUML.dir/main.cpp.obj	37d800c4d209d7f
+2944	3140	7385216156539481	POODPUML.exe	d102736fcc84e6a0
