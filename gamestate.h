@@ -4,6 +4,7 @@
 #include "appstate.h"
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QTimer>
 
 class GameState : public AppState
 {
@@ -20,6 +21,10 @@ signals:
 
 private slots:
     void onBackToMenuButtonClicked();
+    void update();
+private:
+    QTimer *updateTimer;
+
 };
 
 #endif // GAMESTATE_H
