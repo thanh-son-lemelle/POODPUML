@@ -2,6 +2,7 @@
 #include <cmath>
 #include <iostream>
 
+
 Turret::Turret(QObject *parent)
     : QObject(parent), position(0, 0), direction(0, 1), range(100.0f), state(TurretState::Idle), target(nullptr) {}
 
@@ -9,7 +10,6 @@ void Turret::initialize(const QVector2D& position) {
     this->position = position;
     //this->state = TurretState::Idle;
     //this->target = nullptr;
-}
 /*
 void Turret::update(float deltaTime) {
     switch (state) {
