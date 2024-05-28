@@ -265,6 +265,12 @@
 			"MU",
 			"EWIEGA46WW/moc_turret.cpp",
 			null
+		],
+		[
+			"C:/Users/tslem/Documents/POODPUML/wavemanager.h",
+			"MU",
+			"EWIEGA46WW/moc_wavemanager.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -340,8 +346,8 @@
 	[
 		[ "C:/Users/tslem/Documents/POODPUML/main.cpp", "MU", null ],
 		[ "C:/Users/tslem/Documents/POODPUML/mainwindow.cpp", "MU", null ],
-		[ "C:/Users/tslem/Documents/POODPUML/test.cpp", "MU", null ],
-		[ "C:/Users/tslem/Documents/POODPUML/turret.cpp", "MU", null ]
+		[ "C:/Users/tslem/Documents/POODPUML/turret.cpp", "MU", null ],
+		[ "C:/Users/tslem/Documents/POODPUML/wavemanager.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
