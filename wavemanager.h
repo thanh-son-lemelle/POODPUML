@@ -13,6 +13,7 @@ class WaveManager : QObject
     Q_OBJECT
 public:
     static WaveManager& getInstance();
+    ~WaveManager() = default;
     void startNextWave();
     void spawnWave();
     void onLastWaveCleared();
@@ -22,13 +23,12 @@ signals:
 
 private:
     explicit WaveManager(QObject *parent = nullptr);
-    ~WaveManager() = default;
     WaveManager(const WaveManager&) = delete;
 
     static std::unique_ptr<WaveManager> instance;
     static std::once_flag initInstanceFlag;
 
-    event lastWaveClearedEvent;
+    Event lastWaveClearedEvent;
     ObjectPoolManager objectPoolManager;
 };
 
