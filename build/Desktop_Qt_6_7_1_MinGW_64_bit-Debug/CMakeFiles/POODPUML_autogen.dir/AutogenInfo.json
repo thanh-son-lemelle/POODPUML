@@ -340,6 +340,7 @@
 	[
 		[ "C:/Users/tslem/Documents/POODPUML/main.cpp", "MU", null ],
 		[ "C:/Users/tslem/Documents/POODPUML/mainwindow.cpp", "MU", null ],
+		[ "C:/Users/tslem/Documents/POODPUML/test.cpp", "MU", null ],
 		[ "C:/Users/tslem/Documents/POODPUML/turret.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
