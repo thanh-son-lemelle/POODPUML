@@ -3,31 +3,25 @@
 
 #include <QVector2D>
 #include <QObject>
-//#include "turretstate.h"
-//#include "creep.h"
+#include <QPainter>
 
 class Turret : public QObject {
     Q_OBJECT
 
-private:
+protected:
     QVector2D position;
     QVector2D direction;
     float range;
     int damage;
-    //TurretState state;
-    //Creep* target;
 
 public:
     explicit Turret(QObject *parent = nullptr);
     void initialize(const QVector2D& position, float range, int damage);
-    void update(float deltaTime);
-    void rotate(const QVector2D& direction);
-    void acquireTarget();
-    void fireProjectile();
-    //void onCreepEnteredRange(Creep* creep);
-    //void onCreepLeftRange(Creep* creep);
+    virtual void draw(QPainter *painter) = 0; // Pure virtual draw method
 
-    // Add any other necessary methods or member variables
+    // Getter and setter for position
+    QVector2D getPosition() const;
+    void setPosition(const QVector2D& pos);
 };
 
 #endif // TURRET_H

@@ -2,6 +2,7 @@
 #define GAMESTATE_H
 
 #include "appstate.h"
+#include "GameScene.h"
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QTimer>
@@ -15,15 +16,11 @@ public:
 
     void onEnter() override;
     void onExit() override;
-
-signals:
-    void backToMenu();
-
 private slots:
-    void onBackToMenuButtonClicked();
     void update();
 private:
     QTimer *updateTimer;
+    GameScene *gameScene;
 
 };
 

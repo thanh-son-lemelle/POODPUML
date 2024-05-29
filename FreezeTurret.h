@@ -6,6 +6,7 @@
 class FreezeTurret : public Turret {
 public:
     explicit FreezeTurret(QObject *parent = nullptr);
+    void draw(QPainter *painter) override;
 };
 
 #endif // FREEZERTURRET_H
