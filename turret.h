@@ -13,12 +13,13 @@ private:
     QVector2D position;
     QVector2D direction;
     float range;
+    int damage;
     //TurretState state;
     //Creep* target;
 
 public:
     explicit Turret(QObject *parent = nullptr);
-    void initialize(const QVector2D& position);
+    void initialize(const QVector2D& position, float range, int damage);
     void update(float deltaTime);
     void rotate(const QVector2D& direction);
     void acquireTarget();
