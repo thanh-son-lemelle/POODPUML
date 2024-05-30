@@ -28,6 +28,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         wavemanager.h wavemanager.cpp
         Event.h Event.cpp
         ObjectPoolManager.h ObjectPoolManager.cpp
+        Creep.h Creep.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET POODPUML APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
