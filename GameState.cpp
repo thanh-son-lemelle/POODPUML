@@ -1,4 +1,4 @@
-#include "gamestate.h"
+#include "GameState.h"
 #include "TurretFactory.h"
 #include <QVBoxLayout>
 
