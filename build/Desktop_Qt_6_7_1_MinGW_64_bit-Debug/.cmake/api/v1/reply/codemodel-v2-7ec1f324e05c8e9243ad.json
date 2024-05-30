@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "POODPUML::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-POODPUML-Debug-3703009a15ba97410f1e.json",
+					"jsonFile" : "target-POODPUML-Debug-1281f5e6d068af87d489.json",
 					"name" : "POODPUML",
 					"projectIndex" : 0
 				},
@@ -68,8 +68,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug",
-		"source" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML"
+		"build" : "C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug",
+		"source" : "C:/Users/tslem/Documents/POODPUML"
 	},
 	"version" : 
 	{

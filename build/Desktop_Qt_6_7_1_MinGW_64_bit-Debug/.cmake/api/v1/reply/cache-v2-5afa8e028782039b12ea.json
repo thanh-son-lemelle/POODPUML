@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug"
+			"value" : "c:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -479,7 +479,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -563,7 +563,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML"
+			"value" : "C:/Users/tslem/Documents/POODPUML"
 		},
 		{
 			"name" : "CMAKE_INSTALL_BINDIR",
@@ -863,7 +863,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/ninja.exe"
+			"value" : "C:/Qt/Tools/Ninja/ninja.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -1063,7 +1063,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake"
+			"value" : "C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake"
 		},
 		{
 			"name" : "CMAKE_PROJECT_NAME",
@@ -1575,7 +1575,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug"
+			"value" : "C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug"
 		},
 		{
 			"name" : "POODPUML_IS_TOP_LEVEL",
@@ -1599,7 +1599,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML"
+			"value" : "C:/Users/tslem/Documents/POODPUML"
 		},
 		{
 			"name" : "QT_ADDITIONAL_HOST_PACKAGES_PREFIX_PATH",

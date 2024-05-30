@@ -1,17 +1,17 @@
 {
-	"BUILD_DIR" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/POODPUML_autogen",
-	"CMAKE_BINARY_DIR" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug",
-	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML",
+	"BUILD_DIR" : "C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/POODPUML_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/tslem/Documents/POODPUML",
 	"CMAKE_EXECUTABLE" : "C:/Qt/Tools/CMake_64/bin/cmake.exe",
 	"CMAKE_LIST_FILES" : 
 	[
-		"C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/CMakeLists.txt",
-		"C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake",
-		"C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeSystem.cmake",
+		"C:/Users/tslem/Documents/POODPUML/CMakeLists.txt",
+		"C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake",
+		"C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeSystem.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Platform/Windows-Initialize.cmake",
-		"C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeCXXCompiler.cmake",
+		"C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeCXXCompiler.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake",
@@ -24,7 +24,7 @@
 		"C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Platform/Windows-GNU.cmake",
-		"C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeRCCompiler.cmake",
+		"C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CMakeRCCompiler.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeRCInformation.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Platform/Windows-windres.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/Platform/Windows-GNU-CXX-ABI.cmake",
@@ -249,45 +249,45 @@
 		"C:/Qt/6.7.1/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/GNUInstallDirs.cmake"
 	],
-	"CMAKE_SOURCE_DIR" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML",
-	"DEP_FILE" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/POODPUML_autogen/deps",
+	"CMAKE_SOURCE_DIR" : "C:/Users/tslem/Documents/POODPUML",
+	"DEP_FILE" : "C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/POODPUML_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "POODPUML_autogen/timestamp",
 	"HEADERS" : 
 	[
 		[
-			"C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/appstate.h",
+			"C:/Users/tslem/Documents/POODPUML/appstate.h",
 			"MU",
 			"EWIEGA46WW/moc_appstate.cpp",
 			null
 		],
 		[
-			"C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/gamestate.h",
+			"C:/Users/tslem/Documents/POODPUML/gamestate.h",
 			"MU",
 			"EWIEGA46WW/moc_gamestate.cpp",
 			null
 		],
 		[
-			"C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/mainwindow.h",
+			"C:/Users/tslem/Documents/POODPUML/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
 			null
 		],
 		[
-			"C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/menustate.h",
+			"C:/Users/tslem/Documents/POODPUML/menustate.h",
 			"MU",
 			"EWIEGA46WW/moc_menustate.cpp",
 			null
 		],
 		[
-			"C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/turret.h",
+			"C:/Users/tslem/Documents/POODPUML/turret.h",
 			"MU",
 			"EWIEGA46WW/moc_turret.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/POODPUML_autogen/include",
-	"MOC_COMPILATION_FILE" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/POODPUML_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/POODPUML_autogen/include",
+	"MOC_COMPILATION_FILE" : "C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/POODPUML_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"MINGW_HAS_SECURE_API=1",
@@ -343,44 +343,24 @@
 		"-c",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/POODPUML_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/POODPUML_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 8,
-	"PARSE_CACHE_FILE" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/POODPUML_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/POODPUML_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "C:/Qt/6.7.1/mingw_64/./bin/moc.exe",
 	"QT_UIC_EXECUTABLE" : "C:/Qt/6.7.1/mingw_64/./bin/uic.exe",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 7,
-	"SETTINGS_FILE" : "C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/POODPUML_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "C:/Users/tslem/Documents/POODPUML/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/POODPUML_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[
-			"C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/gamestate.cpp",
-			"MU",
-			null
-		],
-		[
-			"C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/main.cpp",
-			"MU",
-			null
-		],
-		[
-			"C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/mainwindow.cpp",
-			"MU",
-			null
-		],
-		[
-			"C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/menustate.cpp",
-			"MU",
-			null
-		],
-		[
-			"C:/Users/Oroitz/Documents/Datos/ProjetsLaPlateforme/gits/POODPUML/turret.cpp",
-			"MU",
-			null
-		]
+		[ "C:/Users/tslem/Documents/POODPUML/gamestate.cpp", "MU", null ],
+		[ "C:/Users/tslem/Documents/POODPUML/main.cpp", "MU", null ],
+		[ "C:/Users/tslem/Documents/POODPUML/mainwindow.cpp", "MU", null ],
+		[ "C:/Users/tslem/Documents/POODPUML/menustate.cpp", "MU", null ],
+		[ "C:/Users/tslem/Documents/POODPUML/turret.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
