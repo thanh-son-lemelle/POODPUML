@@ -1,4 +1,4 @@
-#include "normalturret.h"
+#include "NormalTurret.h"
 
 NormalTurret::NormalTurret(QObject *parent)
     : Turret(parent) {
