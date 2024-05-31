@@ -4,7 +4,6 @@
 #include <QObject>
 #include <QVector2D>
 #include <QGraphicsPixmapItem>
-#include <QPixmap>
 #include "Event.h"
 
 class Creep : public QObject, public QGraphicsPixmapItem {

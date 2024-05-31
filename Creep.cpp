@@ -1,4 +1,5 @@
 #include "Creep.h"
+#include <QPixmap>
 #include <QDebug>
 
 Creep::Creep(const QPixmap &pixmap, QObject *parent)
