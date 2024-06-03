@@ -3,6 +3,7 @@
 
 #include "appstate.h"
 #include "GameScene.h"
+#include "ObjectPool.h"
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QTimer>
@@ -16,12 +17,17 @@ public:
 
     void onEnter() override;
     void onExit() override;
-private slots:
-    void update();
+
+    private slots : void update();
+
 private:
     QTimer *updateTimer;
     GameScene *gameScene;
+    ObjectPool *objectPool;
 
+    //Testing Purposes
+    Turret *normalTurret;
+    int count;
 };
 
 #endif // GAMESTATE_H

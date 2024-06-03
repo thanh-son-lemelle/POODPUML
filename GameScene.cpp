@@ -1,4 +1,5 @@
 #include "GameScene.h"
+#include "ObjectPool.h"
 #include <QPainter>
 
 GameScene::GameScene(QWidget *parent)
@@ -13,5 +14,10 @@ void GameScene::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
     for (Turret *turret : turrets) {
         turret->draw(&painter);
+    }
+    ObjectPool &objectPool = ObjectPool::getInstance();
+    for (Projectile *projectile : objectPool.getProjectiles())
+    {
+        projectile->draw(&painter);
     }
 }

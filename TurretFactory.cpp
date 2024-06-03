@@ -12,3 +12,4 @@ Turret* TurretFactory::createTurret(TurretType type, QObject *parent) {
         return nullptr;
     }
 }
+

@@ -9,17 +9,19 @@ GameState::GameState(QWidget *parent)
     layout->addWidget(gameScene);
     setLayout(layout);
 
-    Turret *normalTurret = TurretFactory::createTurret(TurretType::Normal, this);
-    normalTurret->initialize(QVector2D(50, 50), 100.0f, 10);
+    // Testing Purposes
+    normalTurret = TurretFactory::createTurret(TurretType::Normal, this);
+    normalTurret->initialize(QVector2D(50, 50), 100.0f, 10, 5);
     gameScene->addTurret(normalTurret);
 
     Turret *freezingTurret = TurretFactory::createTurret(TurretType::Freeze, this);
-    freezingTurret->initialize(QVector2D(150, 150), 100.0f, 10);
+    freezingTurret->initialize(QVector2D(150, 150), 100.0f, 2, 20);
     gameScene->addTurret(freezingTurret);
 
-    // Connect the update timer to the update method
-    connect(updateTimer, &QTimer::timeout, this, &GameState::update);
+    count = 0;
+    // End Testing Purposes
 
+    connect(updateTimer, &QTimer::timeout, this, &GameState::update);
 }
 
 void GameState::onEnter()
@@ -40,6 +42,17 @@ void GameState::update()
 {
     // Update game logic here
     qDebug() << "Updating game state";
+    if (count == 0)
+    {
+        normalTurret->fireProjectile();
+        count++;
+    }
+    ObjectPool &objectPool = ObjectPool::getInstance();
+    for (Projectile *projectile : objectPool.getProjectiles())
+    {
+        projectile->update();
+    }
+    gameScene->update();
     // For example, move game objects, check collisions, etc.
     // ex: gameLogic->update
 }

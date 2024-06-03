@@ -29,12 +29,15 @@ set(PROJECT_SOURCES
         FreezeTurret.h FreezeTurret.cpp
         TurretFactory.h TurretFactory.cpp
         GameScene.h GameScene.cpp
+        Projectile.h Projectile.cpp
+        ObjectPool.h ObjectPool.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(POODPUML
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        Creep.h Creep.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET POODPUML APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
