@@ -4,9 +4,10 @@
 #include <QVector2D>
 #include <QObject>
 #include <QPainter>
+#include <QGraphicsPixmapItem>
 #include "Creep.h"
 
-class Turret : public QObject {
+class Turret : public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
 
 protected:
@@ -18,7 +19,7 @@ protected:
     int projectileSpeed;
 
 public:
-    explicit Turret(QObject *parent = nullptr);
+    explicit Turret(QPixmap pixmap, QObject *parent = nullptr);
     void initialize(const QVector2D& position, float range, int damage, int projectileSpeed);
     virtual void draw(QPainter *painter) = 0; // Pure virtual draw method
 

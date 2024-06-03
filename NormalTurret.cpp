@@ -1,9 +1,9 @@
 #include "NormalTurret.h"
 #include "ObjectPool.h"
 
-NormalTurret::NormalTurret(QObject *parent)
-    : Turret(parent) {
-    // Initialize specific attributes for a normal turret
+NormalTurret::NormalTurret(QPixmap pixmap, QObject *parent)
+    : Turret(pixmap, parent)
+{
 }
 
 void NormalTurret::draw(QPainter *painter) {

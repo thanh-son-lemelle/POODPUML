@@ -1,8 +1,9 @@
 #include "FreezeTurret.h"
 #include "ObjectPool.h"
 
-FreezeTurret::FreezeTurret(QObject *parent)
-    : Turret(parent) {
+FreezeTurret::FreezeTurret(QPixmap pixmap, QObject *parent)
+    : Turret(pixmap, parent)
+{
     // Initialize specific attributes for a freezing turret
 }
 
