@@ -4,17 +4,14 @@
 #include <vector>
 #include <functional>
 
-class Event
-{
+class Event {
 public:
-    using Listener = std::function<void()>;
-
-    void addListener(const Listener& listener);
-    void removeListener(const Listener& listener);
-    void notifyListeners() const;
+    void addListener(const std::function<void()>& listener);
+    void removeListener(const std::function<void()>& listener);
+    void notifyListeners();
 
 private:
-    std::vector<Listener> listeners;
- };
+    std::vector<std::function<void()>> listeners;
+};
 
 #endif // EVENT_H
