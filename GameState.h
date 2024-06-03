@@ -24,10 +24,6 @@ private:
     QTimer *updateTimer;
     GameScene *gameScene;
     ObjectPool *objectPool;
-
-    //Testing Purposes
-    Turret *normalTurret;
-    int count;
 };
 
 #endif // GAMESTATE_H
