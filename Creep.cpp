@@ -38,24 +38,25 @@ void Creep::move(float deltaTime) {
 void Creep::onDeath() {
     qDebug() << "Creep died.";
     emit creepKilled();
+    eventDelegates.notifyCreepKilled();
     handleCreepDeath();
 }
 
 void Creep::returnToPool() {
     qDebug() << "Creep returned to pool.";
     emit creepReturnToPool();
-    //creepReturnToPoolHandler.notifyListeners();
+    eventDelegates.notifyCreepReturnToPool();
 }
 
 void Creep::handleCreepDeath() {
     qDebug() << "Handling creep death.";
-    //creepKilledHandler.notifyListeners();
+    eventDelegates.notifyCreepKilled();
     returnToPool();
 }
 
 void Creep::handleCreepReachedBase() {
     qDebug() << "Handling creep reaching base.";
     emit creepReachedBase();
-    //creepReachedBaseHandler.notifyListeners();
+    eventDelegates.notifyCreepReachedBase();
     returnToPool();
 }
