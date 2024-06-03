@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QVector2D>
 #include <QGraphicsPixmapItem>
-#include "Event.h"
+#include "EventCreepDelegates.h"
 
 class Creep : public QObject, public QGraphicsPixmapItem {
     Q_OBJECT
@@ -31,9 +31,7 @@ private:
     int health;
     QVector2D position;
     float speed;
-    Event creepKilledHandler;
-    Event creepReachedBaseHandler;
-    Event creepReturnToPoolHandler;
+    EventCreepDelegates eventDelegates;
 };
 
 #endif // CREEP_H
