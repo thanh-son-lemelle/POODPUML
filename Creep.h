@@ -4,38 +4,34 @@
 #include <QObject>
 #include <QVector2D>
 #include <QGraphicsPixmapItem>
-#include <QPixmap>
-#include "Event.h"
+#include "EventCreepDelegates.h"
 
-class Creep : public QObject, public QGraphicsPixmapItem
-{
+class Creep : public QObject, public QGraphicsPixmapItem {
     Q_OBJECT
 
 public:
-    // explicit Creep(const QPixmap &pixmap, QObject *parent = nullptr);
-    // void initialize(const QVector2D &position);
-    // void update(float deltaTime);
-    // void takeDamage(int amount);
-    // void move(float deltaTime);
-    // void onDeath();
-    // void returnToPool();
+    explicit Creep(const QPixmap &pixmap, QObject *parent = nullptr);
+    void initialize(const QVector2D& position);
+    void update(float deltaTime);
+    void takeDamage(int amount);
+    void move(float deltaTime);
+    void onDeath();
+    void returnToPool();
 
-// signals:
-//     void creepKilled();
-//     void creepReachedBase();
-//     void creepReturnToPool();
+signals:
+    void creepKilled();
+    void creepReachedBase();
+    void creepReturnToPool();
 
-// protected:
-//     virtual void handleCreepDeath();
-//     virtual void handleCreepReachedBase();
+protected:
+    virtual void handleCreepDeath();
+    virtual void handleCreepReachedBase();
 
-// private:
-//     int health;
-//     QVector2D position;
-//     float speed;
-//     Event creepKilledHandler;
-//     Event creepReachedBaseHandler;
-//     Event creepReturnToPoolHandler;
+private:
+    int health;
+    QVector2D position;
+    float speed;
+    EventCreepDelegates eventDelegates;
 };
 
 #endif // CREEP_H

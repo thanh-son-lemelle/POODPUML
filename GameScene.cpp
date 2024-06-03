@@ -10,6 +10,11 @@ void GameScene::addTurret(Turret *turret) {
     update(); // Request a repaint
 }
 
+void GameScene::addCreep(Creep *creep) {
+    creeps.append(creep);
+    update();
+}
+
 void GameScene::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
     for (Turret *turret : turrets) {
@@ -19,5 +24,8 @@ void GameScene::paintEvent(QPaintEvent *event) {
     for (Projectile *projectile : objectPool.getProjectiles())
     {
         projectile->draw(&painter);
+    }
+    for (Creep* creep : creeps) {
+        painter.drawPixmap(creep->pos(), creep->pixmap());
     }
 }

@@ -1,6 +1,7 @@
 #include "GameState.h"
 #include "TurretFactory.h"
 #include <QVBoxLayout>
+#include "Creep.h"
 
 GameState::GameState(QWidget *parent)
     : AppState(parent), updateTimer(new QTimer(this)), gameScene(new GameScene(this))
@@ -19,6 +20,12 @@ GameState::GameState(QWidget *parent)
     gameScene->addTurret(freezingTurret);
     // End Testing Purposes
 
+    QPixmap pixmap(":/images/assets/creep.png");
+    Creep *creep = new Creep(pixmap);
+    creep->initialize(QVector2D(200, 200));
+    gameScene->addCreep(creep);
+
+    // Connect the update timer to the update method
     connect(updateTimer, &QTimer::timeout, this, &GameState::update);
 }
 
