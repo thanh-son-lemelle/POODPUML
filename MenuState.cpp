@@ -12,13 +12,13 @@ MenuState::MenuState(QWidget *parent)
 {
     // Create a label for the background image
     QLabel *backgroundLabel = new QLabel(this);
-    QPixmap pix("C:\\POODPUML\\POODPUML\\assets\\Background.png");
+    QPixmap pix(":/images//assets//Background.png");
     backgroundLabel->setPixmap(pix);
     backgroundLabel->setScaledContents(true); // Ensure the background scales to fit the window
 
     // Create a tool button to start the game and set its icon
     QToolButton *startGameButton = new QToolButton(this);
-    QIcon buttonIcon("C:\\POODPUML\\POODPUML\\assets\\play_button.png");
+    QIcon buttonIcon(":/images//assets//play_button.png");
     startGameButton->setIcon(buttonIcon);
     startGameButton->setIconSize(QSize(100, 100));
     startGameButton->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
