@@ -1,10 +1,17 @@
 #ifndef EVENT_H
 #define EVENT_H
 
-class Event
-{
+#include <vector>
+#include <functional>
+
+class Event {
 public:
-    Event();
+    void addListener(const std::function<void()>& listener);
+    void removeListener(const std::function<void()>& listener);
+    void notifyListeners();
+
+private:
+    std::vector<std::function<void()>> listeners;
 };
 
 #endif // EVENT_H

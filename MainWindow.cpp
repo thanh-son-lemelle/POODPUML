@@ -1,5 +1,5 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "MainWindow.h"
+#include "ui_MainWindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -18,7 +18,6 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(stackedWidget);
 
     connect(menuState, &MenuState::startGame, this, &MainWindow::showGameState);
-    connect(gameState, &GameState::backToMenu, this, &MainWindow::showMenuState);
 
     showMenuState();
 }
