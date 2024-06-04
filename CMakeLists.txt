@@ -31,6 +31,7 @@ set(PROJECT_SOURCES
         GameScene.h GameScene.cpp
         Projectile.h Projectile.cpp
         ObjectPool.h ObjectPool.cpp
+        TurretObserver.h TurretObserver.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

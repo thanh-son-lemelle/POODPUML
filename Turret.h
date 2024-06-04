@@ -33,7 +33,9 @@ public:
     virtual void fireProjectile() = 0; // Pure virtual fireProjectile method
     // Getter and setter for position
     QVector2D getPosition() const;
+    float getRange() const { return range; }
     void setPosition(const QVector2D& pos);
+    void setTarget(Creep *creep);
 };
 
 #endif // TURRET_H

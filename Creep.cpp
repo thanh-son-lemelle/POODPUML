@@ -31,6 +31,7 @@ void Creep::move(float deltaTime) {
     // Example movement logic
     position += QVector2D(speed * deltaTime, 0); // Moves right
     setPos(position.toPointF());
+    emit moved(this);
     qDebug() << "Creep moved to position:" << position;
     if (position.x() > 100) { // Example condition for reaching the base
         handleCreepReachedBase();

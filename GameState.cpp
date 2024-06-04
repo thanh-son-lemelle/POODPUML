@@ -27,6 +27,8 @@ GameState::GameState(QWidget *parent)
 
     // Connect the update timer to the update method
     connect(updateTimer, &QTimer::timeout, this, &GameState::update);
+
+
 }
 
 void GameState::onEnter()

@@ -3,6 +3,8 @@
 
 #include <list>
 #include "Projectile.h"
+#include "Turret.h"
+#include "Creep.h"
 
 class ObjectPool
 {
@@ -18,8 +20,18 @@ public:
     void addProjectile(Projectile *projectile);
     void removeProjectile(Projectile *projectile);
 
+    // Methods to add and remove turrets
+    void addTurret(Turret *turret);
+    void removeTurret(Turret *turret);
+
+    // Methods to add and remove creeps
+    void addCreep(Creep *creep);
+    void removeCreep(Creep *creep);
+
     // Method to get all projectiles
     std::list<Projectile *> &getProjectiles();
+    std::list<Turret *> &getTurrets();
+    std::list<Creep *> &getCreeps();
 
 private:
     // Private constructor and destructor
@@ -28,6 +40,8 @@ private:
 
     // List to store projectiles
     std::list<Projectile *> projectiles;
+    std::list<Turret *> turrets;
+    std::list<Creep *> creeps;
 };
 
 #endif // OBJECTPOOL_H

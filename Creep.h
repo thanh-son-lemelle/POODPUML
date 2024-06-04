@@ -18,10 +18,13 @@ public:
     void onDeath();
     void returnToPool();
 
+    QVector2D getPosition() const { return position; }
+
 signals:
     void creepKilled();
     void creepReachedBase();
     void creepReturnToPool();
+    void moved(Creep *creep);
 
 protected:
     virtual void handleCreepDeath();

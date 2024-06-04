@@ -17,3 +17,7 @@ QVector2D Turret::getPosition() const {
 void Turret::setPosition(const QVector2D& pos) {
     position = pos;
 }
+
+void Turret::setTarget(Creep *creep) {
+    target = creep;
+}
