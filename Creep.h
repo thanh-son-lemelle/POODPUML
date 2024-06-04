@@ -26,12 +26,14 @@ signals:
 protected:
     virtual void handleCreepDeath();
     virtual void handleCreepReachedBase();
+    void handleCollisionProjectiles();
 
 private:
     int health;
     QVector2D position;
     float speed;
     EventCreepDelegates eventDelegates;
+    
 };
 
 #endif // CREEP_H

@@ -6,7 +6,7 @@
 
 class FreezeTurret : public Turret {
 public:
-    explicit FreezeTurret(QPixmap pixmap, QObject *parent = nullptr);
+    explicit FreezeTurret(QObject *parent = nullptr);
     void draw(QPainter *painter) override;
 
     void fireProjectile() override;

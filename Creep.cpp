@@ -1,6 +1,7 @@
 #include "Creep.h"
 #include <QPixmap>
 #include <QDebug>
+#include "ObjectPool.h"
 
 Creep::Creep(const QPixmap &pixmap, QObject *parent)
     : QObject(parent), QGraphicsPixmapItem(pixmap), health(100), speed(1.0f) {
@@ -14,6 +15,7 @@ void Creep::initialize(const QVector2D& position) {
 }
 
 void Creep::update(float deltaTime) {
+
     move(deltaTime);
 }
 
@@ -59,4 +61,9 @@ void Creep::handleCreepReachedBase() {
     emit creepReachedBase();
     eventDelegates.notifyCreepReachedBase();
     returnToPool();
+}
+
+void Creep::handleCollisionProjectiles()
+{
+   
 }

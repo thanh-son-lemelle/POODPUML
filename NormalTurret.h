@@ -4,10 +4,10 @@
 #include "turret.h"
 #include "Projectile.h"
 
-class NormalTurret : public Turret, public QGraphicsPixmapItem
+class NormalTurret : public Turret
 {
 public:
-    explicit NormalTurret(QPixmap pixmap, QObject *parent = nullptr);
+    explicit NormalTurret(QObject *parent = nullptr);
     void draw(QPainter *painter) override; // Implement draw method
 
     void fireProjectile() override; // Implement fireProjectile method

@@ -5,6 +5,13 @@
 #include <QVector2D>
 #include <QPainter>
 #include "Creep.h"
+#include <QGraphicsEllipseItem>
+
+enum class ProjectileType
+{
+    Normal,
+    Freeze
+};
 
 class Projectile : public QObject
 {
@@ -15,15 +22,15 @@ private:
     Creep *target;
     int damage;
     int speed;
+    ProjectileType type;
 
 public:
-    Projectile(QVector2D turretPosition, Creep *target, int damage, int speed, QObject *parent = nullptr);
+    Projectile(QVector2D turretPosition, Creep *target, int damage, int speed, QObject *parent = nullptr, ProjectileType type = ProjectileType::Normal);
     ~Projectile();
 
     void draw(QPainter *painter);
     void update();
 
-signals:
-    void hitTarget(Creep *target);
+    ProjectileType getType() const { return type; }
 };
 #endif // PROJECTILE_H

@@ -1,8 +1,8 @@
 #include "NormalTurret.h"
 #include "ObjectPool.h"
 
-NormalTurret::NormalTurret(QPixmap pixmap, QObject *parent)
-    : Turret(pixmap, parent)
+NormalTurret::NormalTurret(QObject *parent)
+    : Turret( parent)
 {
 }
 
@@ -13,7 +13,7 @@ void NormalTurret::draw(QPainter *painter) {
 
 void NormalTurret::fireProjectile() {
     // Create a new projectile
-    Projectile *projectile = new Projectile(getPosition(), target, damage, projectileSpeed, this);
+    Projectile *projectile = new Projectile(getPosition(), target, damage, projectileSpeed, this, ProjectileType::Normal);
     // Add the projectile to the scene
     ObjectPool::getInstance().addProjectile(projectile);
 }

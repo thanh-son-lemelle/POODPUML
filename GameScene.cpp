@@ -20,8 +20,7 @@ void GameScene::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
     for (Turret *turret : turrets)
     {
-        // turret->draw(&painter);
-        painter.drawPixmap(turret->pos().toPoint(), turret->pixmap());
+        turret->draw(&painter);
     }
     ObjectPool &objectPool = ObjectPool::getInstance();
     for (Projectile *projectile : objectPool.getProjectiles())

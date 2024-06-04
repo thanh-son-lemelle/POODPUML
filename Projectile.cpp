@@ -1,7 +1,7 @@
 #include "Projectile.h"
 
-Projectile::Projectile(QVector2D turretPosition, Creep *target, int damage, int speed, QObject *parent)
-: position(turretPosition), target(target), damage(damage), speed(speed), QObject(parent)
+Projectile::Projectile(QVector2D turretPosition, Creep *target, int damage, int speed, QObject *parent, ProjectileType type)
+: position(turretPosition), target(target), damage(damage), speed(speed), QObject(parent), type(type)
 {
 }
 
@@ -39,3 +39,4 @@ void Projectile::update()
     //     delete this;
     // }
 }
+
