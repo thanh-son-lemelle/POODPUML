@@ -1,4 +1,4 @@
-#include "wavemanager.h"
+#include "WaveManager.h"
 #include <QDebug>
 #include <mutex>
 

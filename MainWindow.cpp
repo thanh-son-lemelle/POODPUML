@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    setFixedSize(835, 548);
+
     stackedWidget = new QStackedWidget(this);
 
     menuState = new MenuState(this);
@@ -17,13 +17,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     setCentralWidget(stackedWidget);
 
-    
-    
     connect(menuState, &MenuState::startGame, this, &MainWindow::showGameState);
-    
 
     showMenuState();
-    
 }
 
 MainWindow::~MainWindow()

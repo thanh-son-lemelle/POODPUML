@@ -14,20 +14,31 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
+        MainWindow.cpp
+        MainWindow.h
+        MainWindow.ui
+
+        Turret.h Turret.cpp
+        AppState.h
+        MenuState.h MenuState.cpp
+        GameState.h GameState.cpp
+        WaveManager.h WaveManager.cpp
+        Event.h Event.cpp
+        ObjectPoolManager.h ObjectPoolManager.cpp
+        NormalTurret.h NormalTurret.cpp
+        FreezeTurret.h FreezeTurret.cpp
+        TurretFactory.h TurretFactory.cpp
+        GameScene.h GameScene.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(POODPUML
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        turret.h turret.cpp
+        Creep.h Creep.cpp
+        ressources.qrc
+        EventCreepDelegates.h EventCreepDelegates.cpp
 
-        wavemanager.h wavemanager.cpp
-        Event.h Event.cpp
-        ObjectPoolManager.h ObjectPoolManager.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET POODPUML APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
