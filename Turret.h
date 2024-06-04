@@ -31,7 +31,6 @@ public:
     virtual void draw(QPainter *painter) = 0; // Pure virtual draw method
 
     virtual void fireProjectile() = 0; // Pure virtual fireProjectile method
-
     // Getter and setter for position
     QVector2D getPosition() const;
     void setPosition(const QVector2D& pos);

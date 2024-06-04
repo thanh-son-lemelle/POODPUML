@@ -24,6 +24,7 @@ private:
     QTimer *updateTimer;
     GameScene *gameScene;
     ObjectPool *objectPool;
+    int score;
 };
 
 #endif // GAMESTATE_H

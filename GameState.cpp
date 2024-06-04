@@ -4,7 +4,7 @@
 #include "Creep.h"
 
 GameState::GameState(QWidget *parent)
-    : AppState(parent), updateTimer(new QTimer(this)), gameScene(new GameScene(this))
+    : AppState(parent), updateTimer(new QTimer(this)), gameScene(new GameScene(this)), score(0)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->addWidget(gameScene);
