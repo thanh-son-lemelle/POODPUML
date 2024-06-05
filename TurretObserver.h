@@ -11,7 +11,6 @@ class TurretObserver : public QObject
 
 public:
     explicit TurretObserver(Turret *turret, QObject *parent = nullptr);
-
 public slots:
     void onCreepMoved(Creep *creep);
 

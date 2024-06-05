@@ -1,7 +1,4 @@
 #include "ObjectPool.h"
-#include "TurretObserver.h"
-#include <QObject>
-
 // Private constructor
 ObjectPool::ObjectPool()
 {
@@ -25,6 +22,11 @@ ObjectPool::~ObjectPool()
     for (Creep *creep : creeps)
     {
         delete creep;
+    }
+
+    for (TurretObserver *observer : observers)
+    {
+        delete observer;
     }
 }
 
@@ -65,9 +67,10 @@ void ObjectPool::addTurret(Turret *turret)
 {
     turrets.push_back(turret);
     TurretObserver *observer = new TurretObserver(turret);
+    observers.push_back(observer);
     for (Creep *creep : creeps)
     {
-        connect(creep, &Creep::moved, observer, &TurretObserver::onCreepMoved);
+        // connect(creep, &Creep::moved, observer, &TurretObserver::onCreepMoved);
     }
 }
 
@@ -88,11 +91,30 @@ std::list<Creep *> &ObjectPool::getCreeps()
 void ObjectPool::addCreep(Creep *creep)
 {
     creeps.push_back(creep);
+    for (TurretObserver *observer : observers)
+    {
+        // connect(creep, &Creep::moved, observer, &TurretObserver::onCreepMoved);
+    }
 }
 
-// Method to remove creep
 void ObjectPool::removeCreep(Creep *creep)
 {
     creeps.remove(creep);
+
+    // Disconnect the Creep::moved signal from the TurretObserver::onCreepMoved slot for each TurretObserver
+    for (TurretObserver *observer : observers)
+    {
+        // disconnect(creep, &Creep::moved, observer, &TurretObserver::onCreepMoved);
+    }
+
+    // Set the target of each Turret that is targeting the removed Creep to nullptr
+    for (Turret *turret : turrets)
+    {
+        if (turret->getTarget() == creep)
+        {
+            turret->setTarget(nullptr);
+        }
+    }
+
     delete creep;
 }

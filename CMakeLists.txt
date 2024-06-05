@@ -17,7 +17,7 @@ set(PROJECT_SOURCES
         MainWindow.cpp
         MainWindow.h
         MainWindow.ui
-
+        Creep.h Creep.cpp
         Turret.h Turret.cpp
         AppState.h
         MenuState.h MenuState.cpp
@@ -38,7 +38,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(POODPUML
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        Creep.h Creep.cpp
         ressources.qrc
         EventCreepDelegates.h EventCreepDelegates.cpp
 

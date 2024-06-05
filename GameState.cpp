@@ -20,9 +20,12 @@ GameState::GameState(QWidget *parent)
     gameScene->addTurret(freezingTurret);
     // End Testing Purposes
 
+    // Simulating what does wave manager do
     QPixmap pixmap(":/images/assets/creep.png");
     Creep *creep = new Creep(pixmap);
     creep->initialize(QVector2D(200, 200));
+    ObjectPool &objectPool = ObjectPool::getInstance();
+    objectPool.addCreep(creep);
     gameScene->addCreep(creep);
 
     // Connect the update timer to the update method

@@ -34,6 +34,8 @@ public:
     // Getter and setter for position
     QVector2D getPosition() const;
     float getRange() const { return range; }
+    Creep *getTarget() const { return target; }
+
     void setPosition(const QVector2D& pos);
     void setTarget(Creep *creep);
 };

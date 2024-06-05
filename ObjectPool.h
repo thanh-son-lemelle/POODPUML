@@ -2,8 +2,10 @@
 #define OBJECTPOOL_H
 
 #include <list>
+#include <QObject>
 #include "Projectile.h"
 #include "Turret.h"
+#include "TurretObserver.h"
 #include "Creep.h"
 
 class ObjectPool
@@ -42,6 +44,7 @@ private:
     std::list<Projectile *> projectiles;
     std::list<Turret *> turrets;
     std::list<Creep *> creeps;
+    std::list<TurretObserver *> observers;
 };
 
 #endif // OBJECTPOOL_H
