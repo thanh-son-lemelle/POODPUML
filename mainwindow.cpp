@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    setFixedSize(835, 548);
+    setFixedSize(835, 548); // set window size
     stackedWidget = new QStackedWidget(this);
 
     menuState = new MenuState(this);
