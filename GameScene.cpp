@@ -33,6 +33,7 @@ void GameScene::paintEvent(QPaintEvent *event) {
     }
     for (Creep *creep : creeps)
     {
-        painter.drawPixmap(creep->pos().toPoint(), creep->pixmap());
+        creep->draw(&painter);
+        // painter.drawPixmap(creep->pos().toPoint(), creep->pixmap());
     }
 }

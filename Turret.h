@@ -38,6 +38,8 @@ public:
 
     void setPosition(const QVector2D& pos);
     void setTarget(Creep *creep);
+
+    virtual void update(); // Pure virtual update method
 };
 
 #endif // TURRET_H

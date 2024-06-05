@@ -1,19 +1,21 @@
 #ifndef TURRETOBSERVER_H
 #define TURRETOBSERVER_H
 
-#include <QObject>
 #include "Turret.h"
 #include "Creep.h"
 
-class TurretObserver : public QObject
+class ObjectPool;
+
+class TurretObserver
 {
-    Q_OBJECT
 
 public:
-    explicit TurretObserver(Turret *turret, QObject *parent = nullptr);
-public slots:
-    void onCreepMoved(Creep *creep);
-
+    explicit TurretObserver(Turret *turret);
+    ~TurretObserver();
+    void update();
+    void scanTarget();
+    void checkForTargetInRange(std::list<Creep *> creeps);
+    void removeTarget();
 private:
     Turret *turret;
 };

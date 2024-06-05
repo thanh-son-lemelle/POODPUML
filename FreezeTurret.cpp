@@ -9,7 +9,7 @@ FreezeTurret::FreezeTurret( QObject *parent)
 
 void FreezeTurret::draw(QPainter *painter) {
     painter->setBrush(Qt::cyan);
-    painter->drawEllipse(getPosition().toPointF(), 10, 10);
+    painter->drawEllipse(getPosition().toPointF(), 20, 20);
 }
 
 void FreezeTurret::fireProjectile() {

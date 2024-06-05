@@ -91,30 +91,15 @@ std::list<Creep *> &ObjectPool::getCreeps()
 void ObjectPool::addCreep(Creep *creep)
 {
     creeps.push_back(creep);
-    for (TurretObserver *observer : observers)
-    {
-        // connect(creep, &Creep::moved, observer, &TurretObserver::onCreepMoved);
-    }
 }
 
 void ObjectPool::removeCreep(Creep *creep)
 {
     creeps.remove(creep);
-
-    // Disconnect the Creep::moved signal from the TurretObserver::onCreepMoved slot for each TurretObserver
-    for (TurretObserver *observer : observers)
-    {
-        // disconnect(creep, &Creep::moved, observer, &TurretObserver::onCreepMoved);
-    }
-
-    // Set the target of each Turret that is targeting the removed Creep to nullptr
-    for (Turret *turret : turrets)
-    {
-        if (turret->getTarget() == creep)
-        {
-            turret->setTarget(nullptr);
-        }
-    }
-
     delete creep;
+}
+
+std::list<TurretObserver *> &ObjectPool::getObservers()
+{
+    return observers;
 }

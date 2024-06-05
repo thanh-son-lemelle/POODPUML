@@ -8,7 +8,7 @@ NormalTurret::NormalTurret(QObject *parent)
 
 void NormalTurret::draw(QPainter *painter) {
     painter->setBrush(Qt::blue);
-    painter->drawEllipse(getPosition().toPointF(), 10, 10); // Draw a circle representing the turret
+    painter->drawEllipse(getPosition().toPointF(), 20, 20); // Draw a circle representing the turret
 }
 
 void NormalTurret::fireProjectile() {

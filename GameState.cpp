@@ -6,25 +6,28 @@
 GameState::GameState(QWidget *parent)
     : AppState(parent), updateTimer(new QTimer(this)), gameScene(new GameScene(this)), score(0)
 {
+    ObjectPool &objectPool = ObjectPool::getInstance();
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->addWidget(gameScene);
     setLayout(layout);
 
     // Testing Purposes
     Turret *normalTurret = TurretFactory::createTurret(TurretType::Normal, this);
-    normalTurret->initialize(QVector2D(50, 50), 100.0f, 10, 5);
+    normalTurret->initialize(QVector2D(75, 130), 300.0f, 10, 5);
     gameScene->addTurret(normalTurret);
 
     Turret *freezingTurret = TurretFactory::createTurret(TurretType::Freeze, this);
-    freezingTurret->initialize(QVector2D(150, 150), 100.0f, 2, 20);
+    freezingTurret->initialize(QVector2D(700, 500), 300.0f, 2, 20);
     gameScene->addTurret(freezingTurret);
+
+    objectPool.addTurret(normalTurret);
+    objectPool.addTurret(freezingTurret);
     // End Testing Purposes
 
     // Simulating what does wave manager do
     QPixmap pixmap(":/images/assets/creep.png");
     Creep *creep = new Creep(pixmap);
-    creep->initialize(QVector2D(200, 200));
-    ObjectPool &objectPool = ObjectPool::getInstance();
+    creep->initialize(QVector2D(50, 500));
     objectPool.addCreep(creep);
     gameScene->addCreep(creep);
 
@@ -51,11 +54,24 @@ void GameState::onExit()
 void GameState::update()
 {
     // Update game logic here
-    qDebug() << "Updating game state";
+    //qDebug() << "Updating game state";
     ObjectPool &objectPool = ObjectPool::getInstance();
     for (Projectile *projectile : objectPool.getProjectiles())
     {
         projectile->update();
+    }
+    for (Creep *creep : objectPool.getCreeps())
+    {
+        creep->update(1);
+    }
+    for (TurretObserver *observer : objectPool.getObservers())
+    {
+        observer->update();
+    }
+
+    for (Turret *turret : objectPool.getTurrets())
+    {
+        turret->update();
     }
     gameScene->update();
     // For example, move game objects, check collisions, etc.

@@ -21,3 +21,9 @@ void Turret::setPosition(const QVector2D& pos) {
 void Turret::setTarget(Creep *creep) {
     target = creep;
 }
+
+void Turret::update() {
+    if (target != nullptr) {
+        fireProjectile();
+    }
+}

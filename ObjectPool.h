@@ -34,6 +34,7 @@ public:
     std::list<Projectile *> &getProjectiles();
     std::list<Turret *> &getTurrets();
     std::list<Creep *> &getCreeps();
+    std::list<TurretObserver *> &getObservers();
 
 private:
     // Private constructor and destructor
