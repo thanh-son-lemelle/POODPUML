@@ -30,18 +30,21 @@ public:
     void addCreep(Creep *creep);
     void removeCreep(Creep *creep);
 
-    // Method to get all projectiles
+    // Method to get all projectiles, turrets, creeps, and observers
     std::list<Projectile *> &getProjectiles();
     std::list<Turret *> &getTurrets();
     std::list<Creep *> &getCreeps();
     std::list<TurretObserver *> &getObservers();
+
+    // Method to update all objects
+    void updateAll();
 
 private:
     // Private constructor and destructor
     ObjectPool();
     ~ObjectPool();
 
-    // List to store projectiles
+    // List to store projectiles, turrets, creeps, and observers
     std::list<Projectile *> projectiles;
     std::list<Turret *> turrets;
     std::list<Creep *> creeps;

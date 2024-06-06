@@ -1,4 +1,5 @@
 #include "ObjectPool.h"
+
 // Private constructor
 ObjectPool::ObjectPool()
 {
@@ -102,4 +103,28 @@ void ObjectPool::removeCreep(Creep *creep)
 std::list<TurretObserver *> &ObjectPool::getObservers()
 {
     return observers;
+}
+
+// Method to update all objects
+void ObjectPool::updateAll()
+{
+    for (Projectile *projectile : projectiles)
+    {
+        projectile->update();
+    }
+
+    for (Turret *turret : turrets)
+    {
+        turret->update();
+    }
+
+    for (Creep *creep : creeps)
+    {
+        creep->update(1);
+    }
+
+    for (TurretObserver *observer : observers)
+    {
+        observer->update();
+    }
 }
