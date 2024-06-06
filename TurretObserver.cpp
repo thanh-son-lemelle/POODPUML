@@ -9,23 +9,32 @@ TurretObserver::~TurretObserver() {}
 
 void TurretObserver::update()
 {
-    removeTarget();
+    loseTarget();
     scanTarget();
 }
 
 void TurretObserver::removeTarget()
 {
-    ObjectPool &objectPool = ObjectPool::getInstance();
-    if (turret->getTarget() != nullptr)
+    if (turret->getTarget()->getIsDead())
     {
-        if (turret->getTarget()->getIsDead())
-        {
-                objectPool.removeCreep(turret->getTarget());
-                turret->setTarget(nullptr);
-        }
+        ObjectPool &objectPool = ObjectPool::getInstance();
+        objectPool.removeCreep(turret->getTarget());
     }
 }
 
+
+
+void TurretObserver::loseTarget()
+{
+    if (turret->getTarget() != nullptr)
+    {
+        if (turret->getRange() < QVector2D(turret->getPosition() - turret->getTarget()->getPosition()).length())
+        {
+            removeTarget();
+            turret->setTarget(nullptr);
+        }
+    }
+}
 void TurretObserver::checkForTargetInRange(std::list<Creep *> creeps)
 {
     for (Creep *creep : creeps)
