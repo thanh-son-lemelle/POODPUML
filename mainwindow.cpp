@@ -1,10 +1,11 @@
 #include "MainWindow.h"
+#include "Game.h"
+#include <QPushButton>
 #include <QVBoxLayout>
 
-MainWindow::MainWindow(QWidget *parent) : QWidget(parent) {
-    setFixedSize(800, 600);
-
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     stackedWidget = new QStackedWidget(this);
+    setCentralWidget(stackedWidget);
 
     // Menu widget setup
     menuWidget = new QWidget(this);
@@ -25,13 +26,11 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent) {
     stackedWidget->addWidget(gameWidget);
     stackedWidget->setCurrentWidget(menuWidget);
 
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    mainLayout->addWidget(stackedWidget);
-    setLayout(mainLayout);
-
     connect(startButton, &QPushButton::clicked, this, &MainWindow::onStartGameClicked);
     connect(quitButton, &QPushButton::clicked, this, &QWidget::close);
 }
+
+MainWindow::~MainWindow() {}
 
 void MainWindow::onStartGameClicked() {
     stackedWidget->setCurrentWidget(gameWidget);

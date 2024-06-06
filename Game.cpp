@@ -8,9 +8,11 @@
 #include <QTimer>
 #include <QPainter>
 #include <QPixmap>
+#include <QMouseEvent>
+#include <QVBoxLayout>
 
 Game::Game(QWidget *parent) : QWidget(parent), waveManager(WaveManager::getInstance()) {
-    setFixedSize(800, 600);
+    setFixedSize(1000, 600);
 
     // Example positions for turrets
     QVector2D regularTurretPosition(0, 0);
@@ -30,6 +32,16 @@ Game::Game(QWidget *parent) : QWidget(parent), waveManager(WaveManager::getInsta
         QWidget::update(); // Update the QWidget to trigger a repaint
     });
     timer->start(16); // Approximately 60 FPS
+
+    // Create buttons
+    freezeTurretButton = new QPushButton("add Freeze Turret", this);
+    regularTurretButton = new QPushButton("add Regular Turret", this);
+    // Set button geometry
+    freezeTurretButton->setGeometry(810, 50, 180, 40);
+    regularTurretButton->setGeometry(810, 100, 180, 40);
+    // Connect buttons to their slots
+    connect(freezeTurretButton, &QPushButton::clicked, this, &Game::selectFreezeTurret);
+    connect(regularTurretButton, &QPushButton::clicked, this, &Game::selectRegularTurret);
 }
 
 void Game::update(float deltaTime) {
@@ -78,4 +90,40 @@ void Game::paintEvent(QPaintEvent *event) {
     for (auto creep : objectPool.getCreeps()) {
         creep->draw(painter);
     }
+}
+
+void Game::mousePressEvent(QMouseEvent *event) {
+    if (event->button() == Qt::LeftButton) {
+        QVector2D position(event->pos());
+
+        if (position.x() < 800) { // Ensure clicks are within the game area
+            Turret* turret = nullptr;
+
+            switch (selectedTurretType) {
+            case Freeze:
+                addFreezeTurret(position);
+                break;
+            case Regular:
+                addRegularTurret(position);
+                break;
+            case None:
+            default:
+                break;
+            }
+
+            if (turret) {
+                turret->initialize(position);
+                addTurret(turret);
+                selectedTurretType = None; // Reset turret selection
+            }
+        }
+    }
+}
+
+void Game::selectFreezeTurret() {
+    selectedTurretType = Freeze;
+}
+
+void Game::selectRegularTurret() {
+    selectedTurretType = Regular;
 }
