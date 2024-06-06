@@ -18,6 +18,11 @@ public:
     void onDeath();
     void returnToPool();
 
+    QVector2D getPosition() const { return position; }
+    bool getIsDead() const { return isDead; }
+
+    void draw(QPainter *painter);
+
 signals:
     void creepKilled();
     void creepReachedBase();
@@ -26,12 +31,15 @@ signals:
 protected:
     virtual void handleCreepDeath();
     virtual void handleCreepReachedBase();
+    void handleCollisionProjectiles();
 
 private:
     int health;
     QVector2D position;
     float speed;
     EventCreepDelegates eventDelegates;
+    bool isDead;
+    
 };
 
 #endif // CREEP_H

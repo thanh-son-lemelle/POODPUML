@@ -17,7 +17,7 @@ set(PROJECT_SOURCES
         MainWindow.cpp
         MainWindow.h
         MainWindow.ui
-
+        Creep.h Creep.cpp
         Turret.h Turret.cpp
         AppState.h
         MenuState.h MenuState.cpp
@@ -29,13 +29,15 @@ set(PROJECT_SOURCES
         FreezeTurret.h FreezeTurret.cpp
         TurretFactory.h TurretFactory.cpp
         GameScene.h GameScene.cpp
+        Projectile.h Projectile.cpp
+        ObjectPool.h ObjectPool.cpp
+        TurretObserver.h TurretObserver.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(POODPUML
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        Creep.h Creep.cpp
         ressources.qrc
         EventCreepDelegates.h EventCreepDelegates.cpp
 

@@ -3,6 +3,7 @@
 #include "FreezeTurret.h"
 
 Turret* TurretFactory::createTurret(TurretType type, QObject *parent) {
+    QPixmap pixmap(":/images/assets/creep.png");
     switch (type) {
     case TurretType::Normal:
         return new NormalTurret(parent);
@@ -12,3 +13,4 @@ Turret* TurretFactory::createTurret(TurretType type, QObject *parent) {
         return nullptr;
     }
 }
+
