@@ -4,7 +4,12 @@
 #include "ObjectPool.h"
 
 Creep::Creep(const QPixmap &pixmap, QObject *parent)
-    : QObject(parent), QGraphicsPixmapItem(pixmap), health(100), speed(1.0f), isDead(false) {
+    : QObject(parent), QGraphicsPixmapItem(pixmap), health(500), speed(1.0f), isDead(false) {
+}
+
+Creep::~Creep() {
+    qDebug() << "Creep destroyed.";
+
 }
 
 void Creep::initialize(const QVector2D& position) {
@@ -24,7 +29,7 @@ void Creep::takeDamage(int amount) {
     health -= amount;
     //qDebug() << "Creep took damage:" << amount << ", remaining health:" << health;
     if (health <= 0) {
-        onDeath();
+        isDead = true;
     }
 }
 
@@ -84,7 +89,15 @@ void Creep::handleCollisionProjectiles()
 }
 
 void Creep::draw(QPainter *painter) {
-    // painter->drawPixmap(position.toPointF(), pixmap());
+    painter->save();
+
+    // Set the color and shape of the projectile
     painter->setBrush(Qt::red);
+    painter->setPen(Qt::NoPen);
+
+    // Draw the projectile as a circle at its current position
     painter->drawEllipse(position.toPointF(), 10, 10);
+
+    // Restore the painter's state
+    painter->restore();
 }

@@ -14,11 +14,9 @@ GameState::GameState(QWidget *parent)
     // Testing Purposes
     Turret *normalTurret = TurretFactory::createTurret(TurretType::Normal, this);
     normalTurret->initialize(QVector2D(75, 130), 300.0f, 10, 5);
-    gameScene->addTurret(normalTurret);
 
     Turret *freezingTurret = TurretFactory::createTurret(TurretType::Freeze, this);
     freezingTurret->initialize(QVector2D(700, 500), 300.0f, 2, 20);
-    gameScene->addTurret(freezingTurret);
 
     objectPool.addTurret(normalTurret);
     objectPool.addTurret(freezingTurret);
@@ -29,7 +27,6 @@ GameState::GameState(QWidget *parent)
     Creep *creep = new Creep(pixmap);
     creep->initialize(QVector2D(50, 400));
     objectPool.addCreep(creep);
-    gameScene->addCreep(creep);
 
     // Connect the update timer to the update method
     connect(updateTimer, &QTimer::timeout, this, &GameState::update);
@@ -56,23 +53,7 @@ void GameState::update()
     // Update game logic here
     //qDebug() << "Updating game state";
     ObjectPool &objectPool = ObjectPool::getInstance();
-    for (Projectile *projectile : objectPool.getProjectiles())
-    {
-        projectile->update();
-    }
-    for (Creep *creep : objectPool.getCreeps())
-    {
-        creep->update(1);
-    }
-    for (TurretObserver *observer : objectPool.getObservers())
-    {
-        observer->update();
-    }
-
-    for (Turret *turret : objectPool.getTurrets())
-    {
-        turret->update();
-    }
+    objectPool.update();
     gameScene->update();
     // For example, move game objects, check collisions, etc.
     // ex: gameLogic->update

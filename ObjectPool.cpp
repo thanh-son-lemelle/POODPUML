@@ -96,6 +96,18 @@ void ObjectPool::addCreep(Creep *creep)
 
 void ObjectPool::removeCreep(Creep *creep)
 {
+    std::list<Projectile *> projectilesToRemove;
+    for (Projectile *projectile : projectiles)
+    {
+        if (projectile->getTarget() == creep)
+        {
+            projectilesToRemove.push_back(projectile);
+        }
+    }
+    for (Projectile *projectile : projectilesToRemove)
+    {
+        removeProjectile(projectile);
+    }
     creeps.remove(creep);
     delete creep;
 }
@@ -106,7 +118,7 @@ std::list<TurretObserver *> &ObjectPool::getObservers()
 }
 
 // Method to update all objects
-void ObjectPool::updateAll()
+void ObjectPool::update()
 {
     for (Projectile *projectile : projectiles)
     {
@@ -126,5 +138,23 @@ void ObjectPool::updateAll()
     for (TurretObserver *observer : observers)
     {
         observer->update();
+    }
+    // handleDeadCreeps();
+}
+
+void ObjectPool::handleDeadCreeps()
+{
+    std::list<Creep *> creepsToRemove;
+    for (Creep *creep : creeps)
+    {
+        if (creep->getIsDead())
+        {
+            creepsToRemove.push_back(creep);
+        }
+    }
+
+    for (Creep *creep : creepsToRemove)
+    {
+        creeps.remove(creep);
     }
 }

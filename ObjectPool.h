@@ -37,7 +37,7 @@ public:
     std::list<TurretObserver *> &getObservers();
 
     // Method to update all objects
-    void updateAll();
+    void update();
 
 private:
     // Private constructor and destructor
@@ -49,6 +49,8 @@ private:
     std::list<Turret *> turrets;
     std::list<Creep *> creeps;
     std::list<TurretObserver *> observers;
+
+    void handleDeadCreeps();
 };
 
 #endif // OBJECTPOOL_H

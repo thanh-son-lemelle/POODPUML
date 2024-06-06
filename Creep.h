@@ -11,6 +11,7 @@ class Creep : public QObject, public QGraphicsPixmapItem {
 
 public:
     explicit Creep(const QPixmap &pixmap, QObject *parent = nullptr);
+    ~Creep();
     void initialize(const QVector2D& position);
     void update(float deltaTime);
     void takeDamage(int amount);

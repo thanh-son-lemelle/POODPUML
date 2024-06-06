@@ -8,8 +8,17 @@ FreezeTurret::FreezeTurret( QObject *parent)
 }
 
 void FreezeTurret::draw(QPainter *painter) {
+    painter->save();
+
+    // Set the color and shape of the projectile
     painter->setBrush(Qt::cyan);
-    painter->drawEllipse(getPosition().toPointF(), 20, 20);
+    painter->setPen(Qt::NoPen);
+
+    // Draw the projectile as a circle at its current position
+    painter->drawEllipse(position.toPointF(), 20, 20);
+
+    // Restore the painter's state
+    painter->restore();
 }
 
 void FreezeTurret::fireProjectile() {
