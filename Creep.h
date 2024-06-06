@@ -22,6 +22,9 @@ public:
     void onReachedBase();
 
     void draw(QPainter &painter);
+
+    //Getters
+    QVector2D getPosition() const { return position; }
 };
 
 #endif // CREEP_H

@@ -1,14 +1,17 @@
 #include "TurretFreeze.h"
-#include "Projectile.h"
+#include "FreezeProjectile.h"
+#include "ObjectPool.h"
+
 #include <QPainter>
 #include <QPixmap>
 
 void TurretFreeze::fireProjectile() {
-    // Implementation of firing a freezing projectile
+    ObjectPool &objectPool = ObjectPool::getInstance();
+    Projectile* projectile = new FreezeProjectile(position, 100, 10, target);
+    objectPool.addProjectile(projectile);
 }
 
 void TurretFreeze::update(float deltaTime) {
-    // Update logic for FreezeTurret
 }
 
 void TurretFreeze::draw(QPainter &painter) {

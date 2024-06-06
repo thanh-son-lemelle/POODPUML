@@ -20,6 +20,11 @@ ObjectPool::~ObjectPool()
     {
         delete creep;
     }
+
+    for (Projectile *projectile : projectiles)
+    {
+        delete projectile;
+    }
 }
 
 // Static method to get the single instance of the class
@@ -30,6 +35,7 @@ ObjectPool &ObjectPool::getInstance()
 }
 
 
+// ======================================= TURRET =======================================
 // Methods to get all turrets
 std::list<Turret *> &ObjectPool::getTurrets()
 {
@@ -49,6 +55,7 @@ void ObjectPool::removeTurret(Turret *turret)
     delete turret;
 }
 
+// ======================================= CREEP =======================================
 // Methods to get all creeps
 std::list<Creep *> &ObjectPool::getCreeps()
 {
@@ -61,11 +68,32 @@ void ObjectPool::addCreep(Creep *creep)
     creeps.push_back(creep);
 }
 
+// Method to remove creep
 void ObjectPool::removeCreep(Creep *creep)
 {
     creeps.remove(creep);
     delete creep;
 }
+
+// ======================================= PROJECTILE =======================================
+// Methods to get all projectiles
+std::list<Projectile *> &ObjectPool::getProjectiles()
+{
+    return projectiles;
+}
+// Method to add projectile
+void ObjectPool::addProjectile(Projectile *projectile)
+{
+    projectiles.push_back(projectile);
+}
+
+// Method to remove projectile
+void ObjectPool::removeProjectile(Projectile *projectile)
+{
+    projectiles.remove(projectile);
+    delete projectile;
+}
+
 
 // Method to update all objects
 void ObjectPool::update()
@@ -79,6 +107,10 @@ void ObjectPool::update()
     {
         creep->update(1);
     }
-    // handleDeadCreeps();
+
+    for (Projectile *projectile : projectiles)
+    {
+        projectile->update(1);
+    }
 }
 
