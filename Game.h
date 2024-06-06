@@ -5,6 +5,7 @@
 #include <QObject>
 #include <QWidget>
 #include <QTimer>
+#include "ObjectPool.h"
 
 class WaveManager;
 class Turret;
@@ -27,6 +28,8 @@ public:
     void addTurret(Turret* turret);
     void addRegularTurret(QVector2D position);
     void addFreezeTurret(QVector2D position);
+
+    ObjectPool &objectPool = ObjectPool::getInstance();
 
 protected:
     void paintEvent(QPaintEvent *event) override;
