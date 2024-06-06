@@ -17,13 +17,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     setCentralWidget(stackedWidget);
 
-    
-    
     connect(menuState, &MenuState::startGame, this, &MainWindow::showGameState);
-    
 
     showMenuState();
-    
 }
 
 MainWindow::~MainWindow()
