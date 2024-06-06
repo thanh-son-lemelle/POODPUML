@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/images">
         <file>assets/creep.png</file>
-        <file>assets/map.png</file>
+        <file>assets/Background.png</file>
+        <file>assets/play_button.png</file>
     </qresource>
 </RCC>
