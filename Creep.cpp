@@ -4,7 +4,7 @@
 #include "ObjectPool.h"
 
 Creep::Creep(const QPixmap &pixmap, QObject *parent)
-    : QObject(parent), QGraphicsPixmapItem(pixmap), health(500), speed(1.0f), isDead(false) {
+    : QObject(parent), QGraphicsPixmapItem(pixmap), health(100), speed(1.0f), isDead(false) {
 }
 
 Creep::~Creep() {

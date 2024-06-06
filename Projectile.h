@@ -23,6 +23,7 @@ private:
     int damage;
     int speed;
     ProjectileType type;
+    QVector2D direction;
 
 public:
     Projectile(QVector2D turretPosition, Creep *target, int damage, int speed, QObject *parent = nullptr, ProjectileType type = ProjectileType::Normal);

@@ -27,10 +27,12 @@ void Projectile::draw(QPainter *painter)
 void Projectile::update()
 {
     // Move towards target
-    QVector2D direction = target->getPosition() - position;
-    direction.normalize();
-    position += direction * speed; 
-    // position += QVector2D(1, 0); 
+    if (target != nullptr)
+    {
+        direction = target->getPosition() - position;
+        direction.normalize();
+    }
+    position += direction * speed;
 
     // Check if we hit the target
     // if (position.distanceToPoint(target->getPosition()) < 5)

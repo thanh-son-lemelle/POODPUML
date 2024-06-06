@@ -96,17 +96,12 @@ void ObjectPool::addCreep(Creep *creep)
 
 void ObjectPool::removeCreep(Creep *creep)
 {
-    std::list<Projectile *> projectilesToRemove;
     for (Projectile *projectile : projectiles)
     {
         if (projectile->getTarget() == creep)
         {
-            projectilesToRemove.push_back(projectile);
+            projectile->setTarget(nullptr);
         }
-    }
-    for (Projectile *projectile : projectilesToRemove)
-    {
-        removeProjectile(projectile);
     }
     creeps.remove(creep);
     delete creep;
