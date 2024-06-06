@@ -27,7 +27,7 @@ GameState::GameState(QWidget *parent)
     // Simulating what does wave manager do
     QPixmap pixmap(":/images/assets/creep.png");
     Creep *creep = new Creep(pixmap);
-    creep->initialize(QVector2D(50, 500));
+    creep->initialize(QVector2D(50, 400));
     objectPool.addCreep(creep);
     gameScene->addCreep(creep);
 

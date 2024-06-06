@@ -17,6 +17,7 @@ void Creep::initialize(const QVector2D& position) {
 void Creep::update(float deltaTime) {
 
     move(deltaTime);
+    handleCollisionProjectiles();
 }
 
 void Creep::takeDamage(int amount) {
@@ -39,9 +40,9 @@ void Creep::move(float deltaTime) {
 
 void Creep::onDeath() {
     qDebug() << "Creep died.";
-    emit creepKilled();
-    eventDelegates.notifyCreepKilled();
-    handleCreepDeath();
+    // emit creepKilled();
+    // eventDelegates.notifyCreepKilled();
+    // handleCreepDeath();
 }
 
 void Creep::returnToPool() {
@@ -65,7 +66,21 @@ void Creep::handleCreepReachedBase() {
 
 void Creep::handleCollisionProjectiles()
 {
-   
+    ObjectPool &objectPool = ObjectPool::getInstance();
+    std::list<Projectile *> projectilesToRemove;
+    for (Projectile *projectile : objectPool.getProjectiles())
+    {
+        if (projectile->getPosition().distanceToPoint(position) < 10)
+        {
+            takeDamage(projectile->getDamage());
+            projectilesToRemove.push_back(projectile);
+        }
+    }
+
+    for (Projectile *projectile : projectilesToRemove)
+    {
+        objectPool.removeProjectile(projectile);
+    }
 }
 
 void Creep::draw(QPainter *painter) {

@@ -16,6 +16,8 @@ public:
     void scanTarget();
     void checkForTargetInRange(std::list<Creep *> creeps);
     void removeTarget();
+    void loseTarget();
+    void onCreepLeftRange();
 private:
     Turret *turret;
 };

@@ -31,6 +31,11 @@ public:
     void draw(QPainter *painter);
     void update();
 
+    void setTarget(Creep *target) { this->target = target; }
+
     ProjectileType getType() const { return type; }
+    QVector2D getPosition() const { return position; }
+    int getDamage() const { return damage; }
+    Creep *getTarget() const { return target; }
 };
 #endif // PROJECTILE_H
