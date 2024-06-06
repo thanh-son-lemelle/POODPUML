@@ -1,24 +1,25 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QWidget>
-#include <QPushButton>
+#include <QMainWindow>
 #include <QStackedWidget>
-#include "Game.h"
 
-class MainWindow : public QWidget {
+class Game;
+
+class MainWindow : public QMainWindow {
     Q_OBJECT
+
+private:
+    QStackedWidget* stackedWidget;
+    QWidget* menuWidget;
+    Game* gameWidget;
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
 
 private slots:
     void onStartGameClicked();
-
-private:
-    QStackedWidget *stackedWidget;
-    QWidget *menuWidget;
-    Game *gameWidget;
 };
 
 #endif // MAINWINDOW_H

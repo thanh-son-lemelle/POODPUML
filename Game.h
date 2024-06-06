@@ -2,7 +2,7 @@
 #define GAME_H
 
 #include <vector>
-#include <QObject>
+#include <QPushButton>
 #include <QWidget>
 #include <QTimer>
 
@@ -19,17 +19,25 @@ private:
     std::vector<Creep*> creeps;
     WaveManager* waveManager;
     QTimer* timer;
+    QPushButton* freezeTurretButton;
+    QPushButton* regularTurretButton;
+    enum TurretType { None, Freeze, Regular } selectedTurretType;
 
 public:
     Game(QWidget *parent = nullptr);
     void update(float deltaTime);
     void spawnCreep(Creep* creep);
     void addTurret(Turret* turret);
-    void addRegularTurret(QVector2D position);
-    void addFreezeTurret(QVector2D position);
+    void addRegularTurret(QVector2D position);//old function to add manualy in game regularturret
+    void addFreezeTurret(QVector2D position);//old function to add manualy in game freezeturret
 
 protected:
     void paintEvent(QPaintEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
+
+private slots:
+    void selectFreezeTurret();
+    void selectRegularTurret();
 };
 
 #endif // GAME_H
