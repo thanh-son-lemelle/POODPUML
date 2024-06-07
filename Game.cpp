@@ -12,7 +12,7 @@
 #include <QVBoxLayout>
 
 Game::Game(QWidget *parent) : QWidget(parent), waveManager(WaveManager::getInstance()) {
-    setFixedSize(1000, 600);
+    setFixedSize(1479, 640);
 
     // Example positions for turrets
     QVector2D regularTurretPosition(0, 0);
@@ -33,8 +33,8 @@ Game::Game(QWidget *parent) : QWidget(parent), waveManager(WaveManager::getInsta
     freezeTurretButton = new QPushButton("add Freeze Turret", this);
     regularTurretButton = new QPushButton("add Regular Turret", this);
     // Set button geometry
-    freezeTurretButton->setGeometry(810, 50, 180, 40);
-    regularTurretButton->setGeometry(810, 100, 180, 40);
+    freezeTurretButton->setGeometry(width()-190, 50, 180, 40);
+    regularTurretButton->setGeometry(width()-190, 100, 180, 40);
     // Connect buttons to their slots
     connect(freezeTurretButton, &QPushButton::clicked, this, &Game::selectFreezeTurret);
     connect(regularTurretButton, &QPushButton::clicked, this, &Game::selectRegularTurret);
@@ -77,7 +77,7 @@ void Game::paintEvent(QPaintEvent *event) {
 
     // Draw background image
     QPixmap background(":/background.png");
-    painter.drawPixmap(0, 0, width(), height(), background);
+    painter.drawPixmap(0, 0, (width()-200), height(), background);
 
     // Draw game elements (turrets, creeps, etc.)
     for (auto turret : turrets) {
