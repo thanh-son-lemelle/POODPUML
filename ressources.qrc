@@ -1,8 +1,9 @@
 <RCC>
     <qresource prefix="/">
-        <file>background.png</file>
+        <file>Background.png</file>
         <file>FreezeTurret.png</file>
         <file>RegularTurret.png</file>
+        <file>Creep.png</file>
     </qresource>
     <qresource prefix="/new/prefix1"/>
 </RCC>

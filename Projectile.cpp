@@ -1,10 +1,17 @@
 #include "Projectile.h"
+#include "Creep.h"
 
-void Projectile::launch(QVector2D pos, QVector2D vel) {
-    position = pos;
-    velocity = vel;
+
+Projectile::Projectile(QVector2D pos, int spd, int dmg, Creep *targ)
+: position(pos), speed(spd), damage(dmg), target(targ)
+{
 }
 
 void Projectile::update(float deltaTime) {
-    // Update position based on velocity
+    if (target != nullptr) {
+        direction = target->getPosition() - position;
+        direction.normalize();
+    }
+    position += direction * deltaTime * speed;
+
 }

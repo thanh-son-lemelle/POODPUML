@@ -14,14 +14,11 @@
 Game::Game(QWidget *parent) : QWidget(parent), waveManager(WaveManager::getInstance()) {
     setFixedSize(1479, 640);
 
-    // Example positions for turrets
-    QVector2D regularTurretPosition(0, 0);
-    QVector2D freezeTurretPosition(300, 400);
+    //Spawn creeps test purposes
+    Creep* creep = new Creep(100, 50.0f, QVector2D(20, 100));
+    spawnCreep(creep);
 
-    // Add turrets to the game scene
-    addRegularTurret(regularTurretPosition);
-    addFreezeTurret(freezeTurretPosition);
-
+    // Create a timer to update the game
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, [this]() {
         update(1.0f / 60.0f); // Assuming 60 FPS
@@ -41,21 +38,16 @@ Game::Game(QWidget *parent) : QWidget(parent), waveManager(WaveManager::getInsta
 }
 
 void Game::update(float deltaTime) {
-    for (auto turret : turrets) {
-        turret->update(deltaTime);
-    }
-    for (auto creep : creeps) {
-        creep->update(deltaTime);
-    }
+    objectPool.update(deltaTime);
     // Additional game logic
 }
 
 void Game::spawnCreep(Creep* creep) {
-    creeps.push_back(creep);
+    objectPool.addCreep(creep);
 }
 
 void Game::addTurret(Turret* turret) {
-    turrets.push_back(turret);
+    objectPool.addTurret(turret);
 }
 
 void Game::addRegularTurret(QVector2D position) {
@@ -80,8 +72,14 @@ void Game::paintEvent(QPaintEvent *event) {
     painter.drawPixmap(0, 0, (width()-200), height(), background);
 
     // Draw game elements (turrets, creeps, etc.)
-    for (auto turret : turrets) {
+    for (auto turret : objectPool.getTurrets()) {
         turret->draw(painter);
+    }
+    for (auto creep : objectPool.getCreeps()) {
+        creep->draw(painter);
+    }
+    for (auto projectile : objectPool.getProjectiles()) {
+        projectile->draw(painter);
     }
 }
 
