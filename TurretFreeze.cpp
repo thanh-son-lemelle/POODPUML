@@ -23,5 +23,8 @@ void TurretFreeze::update(float deltaTime) {
 void TurretFreeze::draw(QPainter &painter) {
     QPixmap image(":/FreezeTurret.png");
     QPixmap scaledImage = image.scaled(WIDTH, HEIGHT, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-    painter.drawPixmap(position.toPointF(), scaledImage);
+
+    // Center the image on the position
+    QPointF centeredPosition = position.toPointF() - QPointF(scaledImage.width() / 2, scaledImage.height() / 2);
+    painter.drawPixmap(centeredPosition, scaledImage);
 }
