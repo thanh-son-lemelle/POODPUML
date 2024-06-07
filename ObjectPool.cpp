@@ -25,6 +25,17 @@ ObjectPool::~ObjectPool()
     {
         delete projectile;
     }
+
+    for (TurretObserver *observer : observers)
+    {
+        delete observer;
+    }
+
+    // Clear the lists
+    turrets.clear();
+    creeps.clear();
+    projectiles.clear();
+    observers.clear();
 }
 
 // Static method to get the single instance of the class
