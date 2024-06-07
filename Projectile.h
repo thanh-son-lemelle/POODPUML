@@ -25,6 +25,9 @@ public:
     QVector2D getPosition() const { return position; }
     int getDamage() const { return damage; }
     Creep *getTarget() const { return target; }
+
+    // Setters
+    void setTarget(Creep *targ) { target = targ; }
 };
 
 #endif // PROJECTILE_H

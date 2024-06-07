@@ -73,6 +73,13 @@ void ObjectPool::addCreep(Creep *creep)
 // Method to remove creep
 void ObjectPool::removeCreep(Creep *creep)
 {
+    for (Projectile *projectile : projectiles)
+    {
+        if (projectile->getTarget() == creep)
+        {
+            projectile->setTarget(nullptr);
+        }
+    }
     creeps.remove(creep);
     delete creep;
 }

@@ -1,3 +1,4 @@
+#include <QTimer>
 #include "Creep.h"
 #include "ObjectPool.h" 
 
@@ -6,6 +7,7 @@ Creep::Creep(int hp, float spd, QVector2D pos) : health(hp), speed(spd), positio
 void Creep::update(float deltaTime) {
     move(deltaTime);
     onCollisionWithProjectile();
+    checkLife();
 }
 
 void Creep::move(float deltaTime) {
@@ -14,12 +16,7 @@ void Creep::move(float deltaTime) {
 }
 
 void Creep::takeDamage(int amount) {
-    health -= amount;
-    if (health <= 0) onKilled();
-}
-
-void Creep::onKilled() {
-    // Logic when killed
+    health -= amount;  
 }
 
 void Creep::onReachedBase() {
@@ -40,7 +37,8 @@ void Creep::onCollisionWithProjectile()
     {
         if (projectile->getPosition().distanceToPoint(position) < 20)
         {
-            takeDamage(projectile->getDamage());
+            // Add logic for when a projectile collides with a creep
+            projectile->applyEffect(this);
             projectilesToRemove.push_back(projectile);
         }
     }
@@ -48,5 +46,20 @@ void Creep::onCollisionWithProjectile()
     for (Projectile *projectile : projectilesToRemove)
     {
         objectPool.removeProjectile(projectile);
+    }
+}
+
+void Creep::freeze(int duration)
+{
+    speed /= 2;
+    int durationInMilliseconds = duration * 1000;
+    QTimer::singleShot(durationInMilliseconds, this, [this] { speed *= 2; });
+}
+
+void Creep::checkLife()
+{
+    if (health <= 0)
+    {
+        isDead = true;
     }
 }

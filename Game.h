@@ -32,6 +32,8 @@ public:
     void addRegularTurret(QVector2D position);//old function to add manualy in game regularturret
     void addFreezeTurret(QVector2D position);//old function to add manualy in game freezeturret
 
+    void checkForDeadCreeps();
+
     ObjectPool &objectPool = ObjectPool::getInstance();
 
 protected:

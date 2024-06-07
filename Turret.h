@@ -3,11 +3,13 @@
 
 #include <QPainter>
 #include <QVector2D>
+#include <QObject>
 
 class Creep;
 
-class Turret
+class Turret: public QObject
 {
+    Q_OBJECT
 protected:
     QVector2D position;
     float range;

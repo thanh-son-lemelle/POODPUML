@@ -7,7 +7,8 @@ FreezeProjectile::FreezeProjectile(QVector2D pos, int spd, int dmg, Creep *targ)
 }
 
 void FreezeProjectile::applyEffect(Creep* target) {
-    // Apply freeze effect
+    target->takeDamage(damage);
+    target->freeze(1);
 }
 
 void FreezeProjectile::draw(QPainter &painter) {
