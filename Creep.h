@@ -19,8 +19,10 @@ public:
     Creep(int hp, float spd, QVector2D pos);
     void update(float deltaTime);
     void takeDamage(int amount);
+    void move(float deltaTime);
     void onKilled();
     void onReachedBase();
+    void onCollisionWithProjectile();
 
     void draw(QPainter &painter);
 

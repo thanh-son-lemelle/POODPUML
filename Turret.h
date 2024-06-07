@@ -25,7 +25,7 @@ public:
     {
         position = pos;
         target = nullptr;
-        range = 500;
+        range = 100;
     }
 
     QVector2D getPosition() const { return position; }
