@@ -69,7 +69,7 @@ void Game::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
 
     // Draw background image
-    QPixmap background(":/background.png");
+    QPixmap background(":/Background.png");
     painter.drawPixmap(0, 0, (width()-200), height(), background);
 
     // Draw game elements (turrets, creeps, etc.)
