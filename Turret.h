@@ -25,7 +25,14 @@ public:
     {
         position = pos;
         target = nullptr;
+        range = 500;
     }
+
+    QVector2D getPosition() const { return position; }
+    float getRange() const { return range; }
+    Creep *getTarget() const { return target; }
+
+    void setTarget(Creep *creep) { target = creep; }
 };
 
 #endif // TURRET_H

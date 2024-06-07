@@ -5,6 +5,7 @@
 #include "Turret.h"
 #include "Creep.h"
 #include "Projectile.h"
+#include "TurretObserver.h"
 
 class ObjectPool
 {
@@ -28,13 +29,18 @@ public:
     void addProjectile(Projectile *projectile);
     void removeProjectile(Projectile *projectile);
 
+    // Methods to add and remove observers
+    void addObserver(TurretObserver *observer);
+    void removeObserver(TurretObserver *observer);
+
     // Method to get all projectiles, turrets, creeps, and observers
     std::list<Turret *> &getTurrets();
     std::list<Creep *> &getCreeps();
     std::list<Projectile *> &getProjectiles();
+    std::list<TurretObserver *> &getObservers();
 
     // Method to update all objects
-    void update();
+    void update(float deltaTime);
 
 private:
     // Private constructor and destructor
@@ -45,6 +51,7 @@ private:
     std::list<Turret *> turrets;
     std::list<Creep *> creeps;
     std::list<Projectile *> projectiles;
+    std::list<TurretObserver *> observers;
 };
 
 #endif // OBJECTPOOL_H

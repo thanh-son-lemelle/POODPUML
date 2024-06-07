@@ -12,7 +12,6 @@ void Projectile::update(float deltaTime) {
         direction = target->getPosition() - position;
         direction.normalize();
     }
-    // position += direction * deltaTime * speed;
-    position += QVector2D(1, 0) * deltaTime * speed;
+    position += direction * deltaTime * speed;
 
 }

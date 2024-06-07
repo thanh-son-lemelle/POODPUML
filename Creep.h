@@ -10,9 +10,10 @@ private:
     int health;
     float speed;
     QVector2D position;
+    bool isDead = false;
 
-    static const int WIDTH = 400;  // Desired width of the creep image
-    static const int HEIGHT = 400; // Desired height of the creep image
+    static const int WIDTH = 50;  // Desired width of the creep image
+    static const int HEIGHT = 50; // Desired height of the creep image
 
 public:
     Creep(int hp, float spd, QVector2D pos);
@@ -25,6 +26,7 @@ public:
 
     //Getters
     QVector2D getPosition() const { return position; }
+    bool getIsDead() const { return isDead; }
 };
 
 #endif // CREEP_H

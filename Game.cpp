@@ -15,7 +15,7 @@ Game::Game(QWidget *parent) : QWidget(parent), waveManager(WaveManager::getInsta
     setFixedSize(1000, 600);
 
     //Spawn creeps test purposes
-    Creep* creep = new Creep(100, 1.0f, QVector2D(100, 100));
+    Creep* creep = new Creep(100, 50.0f, QVector2D(20, 100));
     spawnCreep(creep);
 
     // Create a timer to update the game
@@ -38,15 +38,7 @@ Game::Game(QWidget *parent) : QWidget(parent), waveManager(WaveManager::getInsta
 }
 
 void Game::update(float deltaTime) {
-    for (auto turret : objectPool.getTurrets()) {
-        turret->update(deltaTime);
-    }
-    for (auto creep : objectPool.getCreeps()) {
-        creep->update(deltaTime);
-    }
-    for (auto projectile : objectPool.getProjectiles()) {
-        projectile->update(deltaTime);
-    }
+    objectPool.update(deltaTime);
     // Additional game logic
 }
 

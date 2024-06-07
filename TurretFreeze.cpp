@@ -12,6 +12,9 @@ void TurretFreeze::fireProjectile() {
 }
 
 void TurretFreeze::update(float deltaTime) {
+    if (target != nullptr) {
+        fireProjectile();
+    }
 }
 
 void TurretFreeze::draw(QPainter &painter) {

@@ -12,6 +12,10 @@ void TurretRegular::fireProjectile() {
 }
 
 void TurretRegular::update(float deltaTime) {
+    // Implementation of updating the turret
+    if (target != nullptr) {
+        fireProjectile();
+    }
 }
 
 void TurretRegular::draw(QPainter &painter) {

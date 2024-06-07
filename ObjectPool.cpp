@@ -46,6 +46,8 @@ std::list<Turret *> &ObjectPool::getTurrets()
 void ObjectPool::addTurret(Turret *turret)
 {
     turrets.push_back(turret);
+    TurretObserver *observer = new TurretObserver(turret);
+    observers.push_back(observer);
 }
 
 // Method to remove turret
@@ -94,23 +96,47 @@ void ObjectPool::removeProjectile(Projectile *projectile)
     delete projectile;
 }
 
+// ======================================= OBSERVER =======================================
+// Methods to get all observers
+std::list<TurretObserver *> &ObjectPool::getObservers()
+{
+    return observers;
+}
+
+// Method to add observer
+void ObjectPool::addObserver(TurretObserver *observer)
+{
+    observers.push_back(observer);
+}
+
+// Method to remove observer
+void ObjectPool::removeObserver(TurretObserver *observer)
+{
+    observers.remove(observer);
+    delete observer;
+}
 
 // Method to update all objects
-void ObjectPool::update()
+void ObjectPool::update(float deltaTime)
 {
     for (Turret *turret : turrets)
     {
-        turret->update(1);
+        turret->update(deltaTime);
     }
 
     for (Creep *creep : creeps)
     {
-        creep->update(1);
+        creep->update(deltaTime);
     }
 
     for (Projectile *projectile : projectiles)
     {
-        projectile->update(1);
+        projectile->update(deltaTime);
+    }
+
+    for (TurretObserver *observer : observers)
+    {
+        observer->update();
     }
 }
 

@@ -18,6 +18,7 @@ set(PROJECT_SOURCES
         mainwindow.h
         mainwindow.ui
         ObjectPool.h ObjectPool.cpp
+        TurretObserver.h TurretObserver.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

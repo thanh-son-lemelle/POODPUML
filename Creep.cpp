@@ -4,6 +4,7 @@ Creep::Creep(int hp, float spd, QVector2D pos) : health(hp), speed(spd), positio
 
 void Creep::update(float deltaTime) {
     // Move logic
+    position += QVector2D(1, 0) * deltaTime * speed;
 }
 
 void Creep::takeDamage(int amount) {
