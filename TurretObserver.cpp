@@ -40,16 +40,7 @@ void TurretObserver::onCreepLeftRange(ObjectPool &objectPool)
     {
         if (turret->getRange() < QVector2D(turret->getPosition() - turret->getTarget()->getPosition()).length())
         {
-            removeTarget(objectPool);
             turret->setTarget(nullptr);
         }
-    }
-}
-
-void TurretObserver::removeTarget(ObjectPool &objectPool)
-{
-    if (turret->getTarget()->getIsDead())
-    {
-        objectPool.removeCreep(turret->getTarget());
     }
 }

@@ -91,6 +91,13 @@ void ObjectPool::removeCreep(Creep *creep)
             projectile->setTarget(nullptr);
         }
     }
+    for (Turret *turret : turrets)
+    {
+        if (turret->getTarget() == creep)
+        {
+            turret->setTarget(nullptr);
+        }
+    }
     creeps.remove(creep);
     delete creep;
 }
