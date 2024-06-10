@@ -4,6 +4,7 @@
 #include "TurretFreeze.h"
 #include "TurretRegular.h"
 #include "TurretFactory.h"
+#include "Music.h"
 #include "Creep.h"
 #include <QTimer>
 #include <QPainter>
@@ -35,6 +36,8 @@ Game::Game(QWidget *parent) : QWidget(parent), waveManager(WaveManager::getInsta
     // Connect buttons to their slots
     connect(freezeTurretButton, &QPushButton::clicked, this, &Game::selectFreezeTurret);
     connect(regularTurretButton, &QPushButton::clicked, this, &Game::selectRegularTurret);
+
+    Music::getInstance()->playGameMusic();
 }
 
 void Game::update(float deltaTime) {
