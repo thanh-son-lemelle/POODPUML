@@ -15,3 +15,7 @@ void Projectile::update(float deltaTime) {
     position += direction * deltaTime * speed;
 
 }
+
+bool Projectile::isOutOfBounds() const {
+    return position.x() < 0 || position.x() > 1279 || position.y() < 0 || position.y() > 640;
+}

@@ -18,6 +18,7 @@ public:
     Projectile(QVector2D pos, int spd, int dmg, Creep *targ);
     void update(float deltaTime);
     virtual void applyEffect(Creep* target) = 0;
+    bool isOutOfBounds() const;
 
     virtual void draw(QPainter &painter) = 0;
 

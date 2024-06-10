@@ -24,7 +24,7 @@ private:
     void addFreezeTurret(QVector2D position);//old function to add manualy in game freezeturret
 
     void checkForDeadCreeps();
-
+    void checkForProjectileOutOfBounds();
 
 protected:
     void paintEvent(QPaintEvent *event) override;

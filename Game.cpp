@@ -51,6 +51,7 @@ void Game::update(float deltaTime) {
     objectPool.update(deltaTime);
     waveManager.update(deltaTime);
     checkForDeadCreeps();
+    checkForProjectileOutOfBounds();
     // Additional game logic
 }
 
@@ -141,5 +142,18 @@ void Game::checkForDeadCreeps() {
 
     for (auto creep : creepsToRemove) {
         objectPool.removeCreep(creep);
+    }
+}
+
+void Game::checkForProjectileOutOfBounds() {
+    std::list<Projectile *> projectilesToRemove;
+    for (auto projectile : objectPool.getProjectiles()) {
+        if (projectile->isOutOfBounds()) {
+            projectilesToRemove.push_back(projectile);
+        }
+    }
+
+    for (auto projectile : projectilesToRemove) {
+        objectPool.removeProjectile(projectile);
     }
 }
