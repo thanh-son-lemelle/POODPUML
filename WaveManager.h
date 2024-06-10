@@ -29,7 +29,6 @@ private:
     WaveManager(const WaveManager&) = delete;
     WaveManager& operator=(const WaveManager&) = delete;
 
-    QVector<Creep*> creeps;
     QTimer* spawnTimer;
     int creepsPerWave;
     int creepsSpawned;

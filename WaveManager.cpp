@@ -23,12 +23,8 @@ void WaveManager::spawnCreep() {
 
     Creep* creep = new Creep(100, 50.0f, QVector2D(225, -25));
     ObjectPool::getInstance().addCreep(creep);
-    creeps.append(creep);
     creepsSpawned++;
 }
 
 void WaveManager::update(float deltaTime) {
-    for (Creep* creep : creeps) {
-        creep->update(deltaTime);
-    }
 }
