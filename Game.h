@@ -25,7 +25,6 @@ private:
 
     void checkForDeadCreeps();
 
-    ObjectPool &objectPool = ObjectPool::getInstance();
 
 protected:
     void paintEvent(QPaintEvent *event) override;
