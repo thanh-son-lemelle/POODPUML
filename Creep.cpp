@@ -1,7 +1,14 @@
 #include "Creep.h"
-#include "ObjectPool.h" 
+#include "ObjectPool.h"
+#include "Path.h"
 
-Creep::Creep(int hp, float spd, QVector2D pos) : health(hp), speed(spd), position(pos) {}
+Creep::Creep(int hp, float spd, QVector2D pos)
+    : health(hp), speed(spd), position(pos), waypoints(Path::getWaypoints()), currentWaypointIndex(0) {}
+
+void Creep::initialize(QVector2D pos) {
+    position = pos;
+        currentWaypointIndex = 0;
+}
 
 void Creep::update(float deltaTime) {
     move(deltaTime);
@@ -10,7 +17,18 @@ void Creep::update(float deltaTime) {
 
 void Creep::move(float deltaTime) {
     // Move logic
-    position += QVector2D(1, 0) * deltaTime * speed;
+    if (currentWaypointIndex < waypoints.size()) {
+        QVector2D target = waypoints[currentWaypointIndex];
+        QVector2D direction = (target - position).normalized();
+        position += direction * speed * deltaTime;
+
+        // Check if reached the waypoint
+        if ((target - position).length() < speed * deltaTime) {
+            currentWaypointIndex++;
+        }
+    } else {
+        onReachedBase();
+    }
 }
 
 void Creep::takeDamage(int amount) {

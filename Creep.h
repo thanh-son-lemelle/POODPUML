@@ -4,6 +4,7 @@
 #include <QPainter>
 
 #include <qvector2d.h>
+#include <vector>
 
 class Creep {
 private:
@@ -11,12 +12,15 @@ private:
     float speed;
     QVector2D position;
     bool isDead = false;
+    std::vector<QVector2D> waypoints;
+    int currentWaypointIndex;
 
     static const int WIDTH = 50;  // Desired width of the creep image
     static const int HEIGHT = 50; // Desired height of the creep image
 
 public:
     Creep(int hp, float spd, QVector2D pos);
+    void initialize(QVector2D pos);
     void update(float deltaTime);
     void takeDamage(int amount);
     void move(float deltaTime);
