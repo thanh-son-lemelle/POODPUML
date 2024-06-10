@@ -7,6 +7,7 @@
 #include <QBrush>
 #include <QImage>
 #include <QResizeEvent>
+#include "Option.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
@@ -35,6 +36,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
     connect(startButton, &QPushButton::clicked, this, &MainWindow::onStartGameClicked);
     connect(quitButton, &QPushButton::clicked, this, &QWidget::close);
+    connect(optionsButton, &QPushButton::clicked, this, &MainWindow::onOptionsClicked);
 
     Music::getInstance()->playMenuMusic();
 }
@@ -47,6 +49,19 @@ void MainWindow::onStartGameClicked() {
     stackedWidget->setCurrentWidget(gameWidget);
 }
 
+void MainWindow::onOptionsClicked()
+{
+    Option *optionWidget = new Option(this);
+    stackedWidget->addWidget(optionWidget);
+    stackedWidget->setCurrentWidget(optionWidget);
+
+    connect(optionWidget, &Option::backToMenuClicked, this, &MainWindow::onBackToMenuClicked);
+}
+
+void MainWindow::onBackToMenuClicked()
+{
+    stackedWidget->setCurrentWidget(menuWidget);
+}
 void MainWindow::showEvent(QShowEvent *event)
 {
     QMainWindow::showEvent(event);

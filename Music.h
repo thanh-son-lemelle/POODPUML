@@ -16,6 +16,9 @@ public:
     void pause();
     void toggleMute();
 
+    int getVolume() const { return audioOutput->volume() * 100; }
+    void setVolume(int volume) { audioOutput->setVolume(volume / 100.0); }
+
 private:
     explicit Music(QObject *parent = nullptr);
     Music(const Music &) = delete;
