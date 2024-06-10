@@ -5,18 +5,22 @@
 #include "TurretRegular.h"
 #include "TurretFactory.h"
 #include "Creep.h"
+#include "ObjectPool.h"
 #include <QTimer>
 #include <QPainter>
 #include <QPixmap>
 #include <QMouseEvent>
 #include <QVBoxLayout>
 
-Game::Game(QWidget *parent) : QWidget(parent), waveManager(WaveManager::getInstance()) {
+Game::Game(QWidget *parent)
+    : QWidget(parent),
+    waveManager(WaveManager::getInstance()),
+    objectPool(ObjectPool::getInstance())
+{
     setFixedSize(1479, 640);
 
-    //Spawn creeps test purposes
-    Creep* creep = new Creep(100, 50.0f, QVector2D(20, 100));
-    spawnCreep(creep);
+    // Initialize the WaveManager
+    waveManager.initialize();
 
     // Create a timer to update the game
     timer = new QTimer(this);
@@ -30,15 +34,19 @@ Game::Game(QWidget *parent) : QWidget(parent), waveManager(WaveManager::getInsta
     freezeTurretButton = new QPushButton("add Freeze Turret", this);
     regularTurretButton = new QPushButton("add Regular Turret", this);
     // Set button geometry
-    freezeTurretButton->setGeometry(width()-190, 50, 180, 40);
-    regularTurretButton->setGeometry(width()-190, 100, 180, 40);
+    freezeTurretButton->setGeometry(width() - 190, 50, 180, 40);
+    regularTurretButton->setGeometry(width() - 190, 100, 180, 40);
     // Connect buttons to their slots
     connect(freezeTurretButton, &QPushButton::clicked, this, &Game::selectFreezeTurret);
     connect(regularTurretButton, &QPushButton::clicked, this, &Game::selectRegularTurret);
+
+    // Start the first wave
+    waveManager.startNextWave();
 }
 
 void Game::update(float deltaTime) {
     objectPool.update(deltaTime);
+    waveManager.update(deltaTime);
     // Additional game logic
 }
 
@@ -68,8 +76,8 @@ void Game::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
 
     // Draw background image
-    QPixmap background(":/background.png");
-    painter.drawPixmap(0, 0, (width()-200), height(), background);
+    QPixmap background(":/Background.png");
+    painter.drawPixmap(0, 0, (width() - 200), height(), background);
 
     // Draw game elements (turrets, creeps, etc.)
     for (auto turret : objectPool.getTurrets()) {
@@ -87,7 +95,7 @@ void Game::mousePressEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {
         QVector2D position(event->pos());
 
-        if (position.x() < 800) { // Ensure clicks are within the game area
+        if (position.x() < (width() - 200)) { // Ensure clicks are within the game area
             Turret* turret = nullptr;
 
             switch (selectedTurretType) {
