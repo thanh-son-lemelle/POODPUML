@@ -24,6 +24,7 @@ set(PROJECT_SOURCES
         ObjectPool.h ObjectPool.cpp
         TurretObserver.h TurretObserver.cpp
         Music.h Music.cpp
+        Option.h Option.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

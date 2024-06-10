@@ -23,6 +23,8 @@ public:
 
 private slots:
     void onStartGameClicked();
+    void onOptionsClicked();
+    void onBackToMenuClicked();
 };
 
 #endif // MAINWINDOW_H
