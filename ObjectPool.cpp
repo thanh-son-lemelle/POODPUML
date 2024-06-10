@@ -25,6 +25,17 @@ ObjectPool::~ObjectPool()
     {
         delete projectile;
     }
+
+    for (TurretObserver *observer : observers)
+    {
+        delete observer;
+    }
+
+    // Clear the lists
+    turrets.clear();
+    creeps.clear();
+    projectiles.clear();
+    observers.clear();
 }
 
 // Static method to get the single instance of the class
@@ -78,6 +89,13 @@ void ObjectPool::removeCreep(Creep *creep)
         if (projectile->getTarget() == creep)
         {
             projectile->setTarget(nullptr);
+        }
+    }
+    for (Turret *turret : turrets)
+    {
+        if (turret->getTarget() == creep)
+        {
+            turret->setTarget(nullptr);
         }
     }
     creeps.remove(creep);

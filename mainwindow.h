@@ -13,6 +13,9 @@ private:
     QStackedWidget* stackedWidget;
     QWidget* menuWidget;
     Game* gameWidget;
+protected:
+    void showEvent(QShowEvent *event) override;
+    void resizeEvent(QResizeEvent *event) override;
 
 public:
     MainWindow(QWidget *parent = nullptr);

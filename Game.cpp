@@ -4,6 +4,7 @@
 #include "TurretFreeze.h"
 #include "TurretRegular.h"
 #include "TurretFactory.h"
+#include "Music.h"
 #include "Creep.h"
 #include "ObjectPool.h"
 #include <QTimer>
@@ -42,6 +43,8 @@ Game::Game(QWidget *parent)
 
     // Start the first wave
     waveManager.startNextWave();
+
+    Music::getInstance()->playGameMusic();
 }
 
 void Game::update(float deltaTime) {

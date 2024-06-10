@@ -15,7 +15,6 @@ public:
     void update();
     void onCreepEnteredRange(ObjectPool &objectPool);
     void onCreepLeftRange(ObjectPool &objectPool);
-    void removeTarget(ObjectPool &objectPool);
 
 private:
     Turret *turret;

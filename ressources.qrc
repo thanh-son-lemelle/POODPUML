@@ -4,6 +4,9 @@
         <file>FreezeTurret.png</file>
         <file>RegularTurret.png</file>
         <file>Creep.png</file>
+        <file>menu_music.mp3</file>
+        <file>game_music.mp3</file>
+        <file>MenuBackground.png</file>
     </qresource>
     <qresource prefix="/new/prefix1"/>
 </RCC>
