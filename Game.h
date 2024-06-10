@@ -20,9 +20,14 @@ private slots:
 private:
     void spawnCreep(Creep* creep);
     void addTurret(Turret* turret);
-    void addRegularTurret(QVector2D position);
-    void addFreezeTurret(QVector2D position);
+    void addRegularTurret(QVector2D position);//old function to add manualy in game regularturret
+    void addFreezeTurret(QVector2D position);//old function to add manualy in game freezeturret
 
+    void checkForDeadCreeps();
+
+    ObjectPool &objectPool = ObjectPool::getInstance();
+
+protected:
     void paintEvent(QPaintEvent *event) override;
     void mousePressEvent(QMouseEvent *event) override;
 

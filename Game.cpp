@@ -47,6 +47,7 @@ Game::Game(QWidget *parent)
 void Game::update(float deltaTime) {
     objectPool.update(deltaTime);
     waveManager.update(deltaTime);
+    checkForDeadCreeps();
     // Additional game logic
 }
 
@@ -125,4 +126,17 @@ void Game::selectFreezeTurret() {
 
 void Game::selectRegularTurret() {
     selectedTurretType = Regular;
+}
+
+void Game::checkForDeadCreeps() {
+    std::list<Creep *> creepsToRemove;
+    for (auto creep : objectPool.getCreeps()) {
+        if (creep->getIsDead()) {
+            creepsToRemove.push_back(creep);
+        }
+    }
+
+    for (auto creep : creepsToRemove) {
+        objectPool.removeCreep(creep);
+    }
 }

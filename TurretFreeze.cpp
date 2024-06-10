@@ -6,15 +6,18 @@
 #include <QPixmap>
 
 void TurretFreeze::fireProjectile() {
+    if (target == nullptr) {
+        return;
+    }
     ObjectPool &objectPool = ObjectPool::getInstance();
-    Projectile* projectile = new FreezeProjectile(position, 100, 10, target);
+    Projectile* projectile = new FreezeProjectile(position, 100, 2, target);
     objectPool.addProjectile(projectile);
 }
 
 void TurretFreeze::update(float deltaTime) {
-    if (target != nullptr) {
-        fireProjectile();
-    }
+    // if (target != nullptr) {
+    //     // fireProjectile();
+    // }
 }
 
 void TurretFreeze::draw(QPainter &painter) {
