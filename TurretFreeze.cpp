@@ -10,7 +10,7 @@ void TurretFreeze::fireProjectile() {
         return;
     }
     ObjectPool &objectPool = ObjectPool::getInstance();
-    Projectile* projectile = new FreezeProjectile(position, 100, 2, target);
+    Projectile* projectile = new FreezeProjectile(position, 500, 2, target);
     objectPool.addProjectile(projectile);
 }
 

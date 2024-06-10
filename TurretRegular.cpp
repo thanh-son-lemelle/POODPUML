@@ -11,7 +11,7 @@ void TurretRegular::fireProjectile() {
     }
     // Implementation of firing a regular projectile
     ObjectPool &objectPool = ObjectPool::getInstance();
-    Projectile* projectile = new RegularProjectile(position, 100, 10, target);
+    Projectile* projectile = new RegularProjectile(position, 200, 10, target);
     objectPool.addProjectile(projectile);
 }
 
